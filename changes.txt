@@ -1,0 +1,4 @@
+File: index.html {
+    1. (line_number -> 23, changes -> added img tag)
+    2. added a class 'makingWidthSmall' at line_number: 76,79,82,105 . And that class is in app.css in which I have applied min-width and min-height.
+}

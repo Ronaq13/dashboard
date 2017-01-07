@@ -1,0 +1,244 @@
+<!DOCTYPE>
+<html lang="en" ng-app="socialApp">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+     maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="dependencies/css/angular-material.min.css">
+    <link href="dependencies/css/Material+Icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+    <!-- Introjs -->
+    <link rel="stylesheet" href="css/introjs.css">
+    <title>The Social Network</title>
+</head>
+
+<body layout="row" ng-controller="AppController as AppCtrl">
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-10dp" md-component-id="left" md-is-locked-open="true" ng-class="{'noText': AppCtrl.iconsOnly}">
+        <md-toolbar class="md-hue-2" style="min-height: 52px;">
+            <span flex></span>
+            <div layout="column" class="md-toolbar-tools-bottom inset">
+                <div ng-class="{'none': AppCtrl.iconsOnly}">
+                    <img src="img/profile_small.jpg" alt="Profile picture" style="border-radius: 60%;">
+                </div>
+                <div ng-class="{'none': AppCtrl.iconsOnly}">Firstname Lastname</div>
+                <div ng-class="{'none': AppCtrl.iconsOnly}">email@domain.com</div>
+                <div ng-class="{'none': AppCtrl.iconsOnly}">
+                </div>
+            </div>
+        </md-toolbar>
+        <!-- Fourth tour item -->
+        <md-list ng-controller="SidenavController as sc" data-step="4" data-intro="Your information">
+            <!--Item 1 
+            <md-list-item ng-repeat="setting in sc.settings" layout="row" class="left-sidenav" href="{{setting.url}}" layout-align="start start">
+                <a id="{{setting.id}}" class="sidenavLink" md-ink-ripple layout="row" layout-align="start center">
+                    <div class="inset">
+                        <md-icon md-font-set="md">{{setting.icon}}</md-icon>
+                    </div>
+                    <div class="inset" ng-class="{'none': AppCtrl.iconsOnly}">{{setting.name}}</div>
+                </a>
+            </md-list-item>
+            -->
+            <!-- item 1 -->
+            <md-list-item layout="row" class="left-sidenav" href="#/" layout-align="start start">
+                <a id="item1" class="sidenavLink" md-ink-ripple layout="row" layout-align="start center">
+                    <div class="inset">
+                        <md-icon md-font-set="md">account_circle</md-icon>
+                    </div>
+                    <div class="inset" ng-class="{'none': AppCtrl.iconsOnly}">Account</div>
+                </a>
+            </md-list-item>
+            <!-- item 2 -->
+            <md-list-item layout="row" class="left-sidenav" href="#/contacts" layout-align="start start">
+                <a id="item1" class="sidenavLink" md-ink-ripple layout="row" layout-align="start center">
+                    <div class="inset">
+                        <md-icon md-font-set="md">contacts</md-icon>
+                    </div>
+                    <div class="inset" ng-class="{'none': AppCtrl.iconsOnly}">Contacts</div>
+                </a>
+            </md-list-item>
+
+
+
+
+
+            <md-divider></md-divider>
+            <md-subheader ng-class="{'none': AppCtrl.iconsOnly}">Management</md-subheader>
+            <!--Item 1 -->
+            <md-list-item ng-repeat="label in sc.labels | limitTo: 1">
+                <a md-ink-ripple class="sidenavLink" layout="row" layout-align="start center">
+                    <div class="inset">
+                        <md-icon md-font-set="md" style="color:{{label.color}}">open_in_new</md-icon>
+                    </div>
+                    <div class="inset" ng-class="{'none': AppCtrl.iconsOnly}">{{label.name}}</div>
+                </a>
+            </md-list-item>
+
+        </md-list>
+    </md-sidenav>
+
+    <div layout="column" layout-fill role="main">
+
+        <!--Fab button -->
+        <md-button class="md-fab md-fab-bottom-right" aria-label="add">
+            <md-icon md-font-set="md">add</md-icon>
+        </md-button>
+
+        <!--Toolbar-->
+        <div ng-controller="ToolbarController as tbc">
+            <!--Main Toolbar -->
+            <md-toolbar layout="row" ng-hide="tbc.showSearch()" layout-align="center center" md-whiteframe="5">
+                <!-- First tour element -->
+                <md-button class="makingWidthSmall" aria-label="menu" ng-click="AppCtrl.toggleIcons()" data-step="1" data-intro="First tip">
+                    <md-icon md-font-set="md">menu</md-icon>
+                </md-button>
+                <span flex="5" gt-md></span>
+                <h3>Dashboard</h3>
+                <span flex></span>
+                <!-- Second tour Element -->
+                <md-button class="makingWidthSmall" aria-label="search" ng-click="tbc.toggleSearch()" data-step="2" data-intro="Second tip">
+                    <md-icon md-font-set="md">search</md-icon>
+                </md-button>
+                <md-button class="makingWidthSmall" aria-label="search" id="completeBtn">
+                    <md-icon md-font-set="md">first_page</md-icon>
+                </md-button>
+                <md-button class="makingWidthSmall" aria-label="search" id="activityBoxBtn">
+                    <md-icon md-font-set="md">last_page</md-icon>
+                </md-button>
+                <md-menu>
+                    <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button">
+                        <md-icon md-font-set="md" md-menu-origin>phone</md-icon>
+                    </md-button>
+                    <md-menu-content>
+                        <md-menu-item>
+                            <md-button>
+                                <md-icon class="md">call</md-icon>Item 1</md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>
+                                <md-icon class="md">call</md-icon>Item 2</md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>
+                                <md-icon class="md">call</md-icon>Item 3</md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <!-- Third tour item here -->
+                <md-button class="makingWidthSmall" aria-label="options" ng-click="tbc.toggleSidenav('right')" data-step="3" data-intro="Second tip">
+                    <md-icon md-font-set="md">more_vert</md-icon>
+                </md-button>
+            </md-toolbar>
+            <!--Search Toolbar -->
+            <md-toolbar layout="row" class="md-hue-1" ng-show="tbc.showSearch()" layout-align="center center" md-whiteframe="5">
+                <div class="md-toolbar-tools">
+                    <md-button ng-click="tbc.toggleSearch()" aria-label="Back">
+                        <md-icon md-font-set="md">arrow_back</md-icon>
+                    </md-button>
+                    <h3 flex="10">Back</h3>
+                    <md-input-container md-theme="input" flex>
+                        <label>&nbsp;</label>
+                        <input placeholder="enter search" />
+                    </md-input-container>
+                    <md-button aria-label="search" ng-click="tbc.toggleSearch()">
+                        <md-icon md-font-set="md">search</md-icon>
+                    </md-button>
+                    <md-button aria-label="options" ng-click="tbc.toggleSidenav('right')">
+                        <md-icon md-font-set="md">more_vert</md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+        </div>
+
+        <!--Content Area-->
+        <md-content flex md-scroll-y>
+            <div ui-view></div>
+
+            <!--Right Sidenav-->
+            <md-sidenav class="md-sidenav-right" md-white-frame="10" md-component-id="right">
+                <md-tabs md-stretch-tabs md-center-tabs md-border-bottom>
+                    <md-tab id="tab1">
+                        <md-tab-label>One</md-tab-label>
+                        <md-tab-body>
+                            View for Item #1 <br/> data.selectedIndex = 0;
+                        </md-tab-body>
+                    </md-tab>
+                    <md-tab id="tab2">
+                        <md-tab-label>Two</md-tab-label>
+                        <md-tab-body>
+                            View for Item #2 <br/> data.selectedIndex = 1;
+                        </md-tab-body>
+                    </md-tab>
+                    <md-tab id="tab3">
+                        <md-tab-label>Three</md-tab-label>
+                        <md-tab-body>
+                            View for Item #3 <br/> data.selectedIndex = 2;
+                        </md-tab-body>
+                    </md-tab>
+                </md-tabs>
+            </md-sidenav>
+        </md-content>
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script src="dependencies/js/angular.min.js"></script>
+    <script src="dependencies/js/angular-animate.min.js"></script>
+    <script src="dependencies/js/angular-aria.min.js"></script>
+    <script src="dependencies/js/angular-messages.min.js"></script>
+    <script src="dependencies/js/angular-touch.min.js"></script>
+    <script src="dependencies/js/angular-material.min.js"></script>
+    <script src="dependencies/js/angular-ui-router.min.js"></script>
+    <!-- Intojs -->
+    <script src="js/intro.js"></script>
+
+    <script src="js/app.js"></script>
+    <!--controllers -->
+    <script src="js/controllers/ToolbarController.js"></script>
+    <script src="js/controllers/SidenavController.js"></script>
+    <script src="js/controllers/AppController.js"></script>
+    <script src="js/controllers/ContactsController2.js"></script>
+    <!--directives -->
+    <script src="js/directives/userAvatar.js"></script>
+    <script>
+        $(document).ready(function() {
+            document.getElementById('activityBoxBtn').addEventListener('click', function() {
+                introJs().addSteps([{
+                    element: document.querySelectorAll('#activityToolTip1')[0],
+                    intro: "Ok, wasn't that fun?",
+                    position: 'bottom'
+                }, {
+                    element: document.querySelectorAll('#avtivityToolTip2')[0],
+                    intro: "Ok, wasn't that fun?",
+                    position: 'bottom'
+                }]).setOptions({
+                    'showStepNumbers': 'false'
+                }).setOptions({
+                    'showStepNumbers': 'false',
+                    'scrollToElement': 'true'
+                }).start();
+            });
+
+            document.getElementById('completeBtn').addEventListener('click', function() {
+                introJs().setOptions({
+                    'showStepNumbers': 'false',
+                    'scrollToElement': 'true'
+                }).start();
+            });
+            console.log("ready!");
+
+
+            document.getElementById('item1').addEventListener('click', function() {
+                document.getElementById('item1').innerText = "thick solid rgb(2, 119, 189)";
+            });
+        });
+    </script>
+    <script>
+        function whenSelected() {
+            console.log("getting that");
+        }
+    </script>
+</body>
+
+</html>

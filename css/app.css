@@ -1,0 +1,171 @@
+md-content.md-default-theme {
+    background-color: #eee;
+}
+
+md-card {
+    background-color: #fff;
+}
+
+md-card h2:first-of-type {
+    margin-top: 0;
+}
+
+md-toolbar-tools.md-button {
+    border-radius: 50%;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+.md-toolbar-tools-bottom {
+    font-size: small;
+}
+
+md-toolbar:not(.md-hue-1),
+.md-fab {
+    color: #fff;
+    fill: #fff;
+}
+
+md-sidenav {
+    color: #737373;
+}
+
+.user-avatar {
+    border-radius: 50%;
+}
+
+md-sidenav>md-list>md-list-item>button {
+    width: 100%;
+}
+
+md-toolbar div.md-errors-spacer {
+    display: none;
+}
+
+div.md-toolbar-tools md-input-container {
+    margin: 0;
+}
+
+.sidenavLink {
+    text-decoration: none;
+    color: #737373;
+}
+
+h3 {
+    margin: 6px;
+}
+
+img.contact {
+    width: 80px;
+    height: 80px;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+
+.contact-name {
+    color: #666666;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.contact-title {
+    color: #666666;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: center;
+}
+
+md-card-title.sanitize {
+    margin: 0;
+    padding: 0;
+}
+
+md-divider.action {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+address.contact-address {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #666666;
+    font-style: normal;
+    line-height: 1.4;
+    text-align: center;
+    font-size: 13px;
+}
+
+md-card-actions.contact-action {
+    margin: 0;
+    padding: 0;
+}
+
+button.button-action.md-button.md-ink-ripple {
+    margin: 0 !important;
+    padding-left: 1px;
+    font-size: 13px;
+    min-width: 40px;
+}
+
+.active-letter {
+    background-color: #ccc;
+}
+
+
+/*div.md-button.md-no-style {
+    min-width: 0px;
+}
+*/
+
+md-toolbar {
+    min-height: 8px;
+}
+
+.md-toolbar-tools {
+    height: 48px;
+}
+
+md-card-title.filter-title {
+    margin: 0;
+    padding: 0;
+}
+
+md-card-title-text.filter-title-text {
+    margin: 0;
+    padding: 0;
+    color: #666666;
+    text-align: center;
+}
+
+.filter-alphabets p a {
+    font-size: 16px;
+    color: #666666;
+    padding: 5px;
+}
+
+.none {
+    display: none;
+}
+
+md-sidenav.noText {
+    width: auto;
+}
+
+md-list-item.left-sidenav {
+    height: 48px;
+    text-align: left;
+    /* border-left: thick solid rgb(2, 119, 189);
+    background-color: lightgray;
+*/
+}
+
+.makingWidthSmall {
+    min-width: 40px !important;
+    min-height: 40px !important;
+}

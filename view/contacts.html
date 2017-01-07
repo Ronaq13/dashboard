@@ -1,0 +1,55 @@
+<div layout-padding layout-fill>
+    <div layout="row" layout-align="start center">
+        <md-card layout-padding flex>
+            <md-card-title class="filter-title">
+                <md-card-title-text class="filter-title-text"><strong>Filter by letter</strong></md-card-title-text>
+            </md-card-title>
+            <md-card-content layout="row" layout-align="center center" class="filter-alphabets">
+                <p layout="row" layout-align="center center" layout-wrap>
+                    <a ng-click="ct.activateLetter('')" ng-class="{'active-letter': ct.activeLetter == ''}" md-ink-ripple>ALL</a>
+                    <a ng-repeat="alphabet in ct.alphabets" ng-click="ct.activateLetter(alphabet)"
+                                  ng-class="{'active-letter':alphabet==ct.activeLetter}" md-ink-ripple>{{alphabet}}</a>
+                </p>
+            </md-card-content>
+        </md-card>
+    </div>
+    <div class="inset" hide-sm></div>
+    <div layout="row" layout-align="center start" layout-fill layout-wrap>
+        <md-card flex-xs="100" flex-sm="50" flex-md="33" flex-lg="25" flex-gt-lg="20"
+        ng-repeat="contact in ct.contacts| startsWithLetter :ct.activeLetter" layout="column" layout-align="center center"
+                 layout-margin layout-padding class="md-whiteframe-2dp">
+            <img class="contact" ng-src="{{contact.img}}" />
+            <md-card-title class="sanitize">
+                <md-card-title-text>
+                    <div class="contact-name">{{contact.name}}</div>
+                    <div class="contact-title">{{contact.title}}</div>
+                </md-card-title-text>
+
+            </md-card-title>
+            <md-card-content layout="column" layout-align="center center">
+                <address class="contact-address">
+                    <strong>{{contact.company}}</strong>
+                    <br> {{contact.addressOne}}
+                    <br> {{contact.addressTwo}}
+                    <br>
+                    <abbr title="Phone">P:</abbr>
+                    {{contact.phone}}
+                </address>
+            </md-card-content>
+            <md-divider class="action"></md-divider>
+            <md-card-actions class="contact-action">
+                <md-card-icon-actions layout="row" layout-align="center center">
+                    <md-button class="button-action md-icon-button">
+                        <md-icon class="md">call</md-icon>
+                    </md-button>
+                    <md-button class="button-action md-icon-button">
+                        <md-icon class="md">email</md-icon>
+                    </md-button>
+                    <md-button class="button-action md-icon-button">
+                        <md-icon class="md">group_add</md-icon>
+                    </md-button>
+                </md-card-icon-actions>
+            </md-card-actions>
+        </md-card>
+    </div>
+</div>
