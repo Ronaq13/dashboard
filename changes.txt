@@ -6,5 +6,11 @@ File: index.html {
         2. Add the Script code for side navbar from line number 249 to 268.
         3. Copy the complete code from app.css from line number 169 till end, into your app.css 
     }
-    4. 
+    4. {
+        1. Added this statement -> id="{{$index"}} in line 48
+        2. the add the script code from line number 243 to 287
+        3. add a class .selected in app.css
+    }
 }
+
+----------------------------- All four changes are done ------------------------
