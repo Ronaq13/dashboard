@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="dependencies/css/angular-material.min.css">
     <link href="dependencies/css/Material+Icons.css" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Nice menu -->
+    <link rel="stylesheet" href="css/nice-menu.css">
     <!-- Introjs -->
     <link rel="stylesheet" href="css/introjs.css">
     <title>The Social Network</title>
@@ -24,7 +28,17 @@
                 </div>
                 <div ng-class="{'none': AppCtrl.iconsOnly}">Firstname Lastname</div>
                 <div ng-class="{'none': AppCtrl.iconsOnly}">email@domain.com</div>
-                <div ng-class="{'none': AppCtrl.iconsOnly}">
+                <div style="margin-top: 10px;" ng-class="{'none': AppCtrl.iconsOnly}">
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn"><i class="material-icons">arrow_drop_down</i></button>
+                        <div id="myDropdown" class="dropdown-content animated fadeInRight">
+                            <a href="#home">Home</a>
+                            <a href="#about">About</a>
+                            <a href="#contact">Contact</a>
+                            <md-divider></md-divider>
+                            <a href="#">Logout</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </md-toolbar>
@@ -50,13 +64,15 @@
                 </a>
             </md-list-item>
             <!-- item 2 -->
-            <md-list-item layout="row" class="left-sidenav" href="#/contacts" layout-align="start start">
+            <md-list-item id="thisIs" layout="row" class="left-sidenav" href="#/contacts" layout-align="start start" ng-click="myStyle={'border-left': thick solid rgb(2, 119, 189),
+                                         'background-color': lightgray}" ng-style="myStyle">
                 <a id="item1" class="sidenavLink" md-ink-ripple layout="row" layout-align="start center">
                     <div class="inset">
                         <md-icon md-font-set="md">contacts</md-icon>
                     </div>
                     <div class="inset" ng-class="{'none': AppCtrl.iconsOnly}">Contacts</div>
                 </a>
+
             </md-list-item>
 
 
@@ -227,16 +243,28 @@
                 }).start();
             });
             console.log("ready!");
-
-
-            document.getElementById('item1').addEventListener('click', function() {
-                document.getElementById('item1').innerText = "thick solid rgb(2, 119, 189)";
-            });
         });
     </script>
     <script>
-        function whenSelected() {
-            console.log("getting that");
+        /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
         }
     </script>
 </body>
