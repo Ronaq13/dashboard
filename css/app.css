@@ -219,10 +219,9 @@ md-list-item.left-sidenav {
     background-image: url(/css/images/logo.png);
     background-repeat: no-repeat;
     background-position: left top;
-    padding-top: 95px;
     margin-bottom: 60px;
     -webkit-animation-duration: 10s;
-    animation-duration: 10s;
+    animation-duration: 0.6s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
@@ -230,7 +229,7 @@ md-list-item.left-sidenav {
 @-webkit-keyframes fadeInRight {
     0% {
         opacity: 0;
-        -webkit-transform: translateX(20px);
+        -webkit-transform: translateX(10px);
     }
     100% {
         opacity: 1;
@@ -241,7 +240,7 @@ md-list-item.left-sidenav {
 @keyframes fadeInRight {
     0% {
         opacity: 0;
-        transform: translateX(20px);
+        transform: translateX(10px);
     }
     100% {
         opacity: 1;
@@ -252,4 +251,19 @@ md-list-item.left-sidenav {
 .fadeInRight {
     -webkit-animation-name: fadeInRight;
     animation-name: fadeInRight;
+}
+
+.flex-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+}
+
+.flex-item {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
 }
