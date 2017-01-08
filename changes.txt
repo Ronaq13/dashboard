@@ -1,4 +1,10 @@
 File: index.html {
     1. (line_number -> 23, changes -> added img tag)
     2. added a class 'makingWidthSmall' at line_number: 76,79,82,105 . And that class is in app.css in which I have applied min-width and min-height.
+    3. For dropdown in sidenav bar {
+        1. Add the code from line number 31 to 42 below you 'email@domain.com' section in md-toolbar of sidenav.
+        2. Add the Script code for side navbar from line number 249 to 268.
+        3. Copy the complete code from app.css from line number 169 till end, into your app.css 
+    }
+    4. 
 }

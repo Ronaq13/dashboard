@@ -267,3 +267,8 @@ md-list-item.left-sidenav {
     flex-basis: auto;
     align-self: auto;
 }
+
+.selected {
+    border-left: 7px solid blue;
+    background-color: #a9acad;
+}

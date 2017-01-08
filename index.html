@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="dependencies/css/angular-material.min.css">
     <link href="dependencies/css/Material+Icons.css" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
-    <!-- Fontawesome -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Joyride -->
+    <link rel="stylesheet" href="joyride-2.1.css">
     <!-- Nice menu -->
     <link rel="stylesheet" href="css/nice-menu.css">
     <!-- Introjs -->
@@ -19,7 +19,7 @@
 </head>
 
 <body layout="row" ng-controller="AppController as AppCtrl">
-    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-10dp" md-component-id="left" md-is-locked-open="true" ng-class="{'noText': AppCtrl.iconsOnly}">
+    <md-sidenav flex-xs="0" layout="column" class="md-sidenav-left md-whiteframe-10dp" md-component-id="left" md-is-locked-open="true" ng-class="{'noText': AppCtrl.iconsOnly}">
         <md-toolbar class="md-hue-2" style="min-height: 52px;">
             <span flex></span>
             <div layout="column" class="md-toolbar-tools-bottom inset">
@@ -32,9 +32,9 @@
                     <div class="dropdown">
                         <button style="background: transparent; padding-left: 0px;" onclick="myFunction()" class="dropbtn">More</button>
                         <div id="myDropdown" class="dropdown-content animated fadeInRight">
-                            <a href="#home">Home</a>
-                            <a href="#about">About</a>
-                            <a href="#contact">Contact</a>
+                            <a href="#home">Profile</a>
+                            <a href="#about">Contact</a>
+                            <a href="#contact">Mail Box</a>
                             <md-divider></md-divider>
                             <a href="#">Logout</a>
                         </div>
@@ -44,41 +44,15 @@
         </md-toolbar>
         <!-- Fourth tour item -->
         <md-list ng-controller="SidenavController as sc" data-step="4" data-intro="Your information">
-            <!--Item 1 
-            <md-list-item ng-repeat="setting in sc.settings" layout="row" class="left-sidenav" href="{{setting.url}}" layout-align="start start">
-                <a id="{{setting.id}}" class="sidenavLink" md-ink-ripple layout="row" layout-align="start center">
+            <!--Item 1 -->
+            <md-list-item ng-repeat="setting in sc.settings" layout="row" class="left-sidenav" href="{{setting.url}}" layout-align="start start" id="{{$index}}">
+                <a class="sidenavLink" md-ink-ripple layout="row" layout-align="start center">
                     <div class="inset">
                         <md-icon md-font-set="md">{{setting.icon}}</md-icon>
                     </div>
                     <div class="inset" ng-class="{'none': AppCtrl.iconsOnly}">{{setting.name}}</div>
                 </a>
             </md-list-item>
-            -->
-            <!-- item 1 -->
-            <md-list-item layout="row" class="left-sidenav" href="#/" layout-align="start start">
-                <a id="item1" class="sidenavLink" md-ink-ripple layout="row" layout-align="start center">
-                    <div class="inset">
-                        <md-icon md-font-set="md">account_circle</md-icon>
-                    </div>
-                    <div class="inset" ng-class="{'none': AppCtrl.iconsOnly}">Account</div>
-                </a>
-            </md-list-item>
-            <!-- item 2 -->
-            <md-list-item id="thisIs" layout="row" class="left-sidenav" href="#/contacts" layout-align="start start" ng-click="myStyle={'border-left': thick solid rgb(2, 119, 189),
-                                         'background-color': lightgray}" ng-style="myStyle">
-                <a id="item1" class="sidenavLink" md-ink-ripple layout="row" layout-align="start center">
-                    <div class="inset">
-                        <md-icon md-font-set="md">contacts</md-icon>
-                    </div>
-                    <div class="inset" ng-class="{'none': AppCtrl.iconsOnly}">Contacts</div>
-                </a>
-
-            </md-list-item>
-
-
-
-
-
             <md-divider></md-divider>
             <md-subheader ng-class="{'none': AppCtrl.iconsOnly}">Management</md-subheader>
             <!--Item 1 -->
@@ -94,7 +68,7 @@
         </md-list>
     </md-sidenav>
 
-    <div layout="column" layout-fill role="main">
+    <div flex-xs="100" layout="column" layout-fill role="main">
 
         <!--Fab button -->
         <md-button class="md-fab md-fab-bottom-right" aria-label="add">
@@ -106,7 +80,7 @@
             <!--Main Toolbar -->
             <md-toolbar layout="row" ng-hide="tbc.showSearch()" layout-align="center center" md-whiteframe="5">
                 <!-- First tour element -->
-                <md-button class="makingWidthSmall" aria-label="menu" ng-click="AppCtrl.toggleIcons()" data-step="1" data-intro="First tip">
+                <md-button id="num01" class="makingWidthSmall" aria-label="menu" ng-click="AppCtrl.toggleIcons()" data-step="1" data-intro="First tip">
                     <md-icon md-font-set="md">menu</md-icon>
                 </md-button>
                 <span flex="5" gt-md></span>
@@ -196,7 +170,6 @@
             </md-sidenav>
         </md-content>
 
-
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
     <script src="dependencies/js/angular.min.js"></script>
@@ -210,6 +183,7 @@
     <script src="js/intro.js"></script>
 
     <script src="js/app.js"></script>
+
     <!--controllers -->
     <script src="js/controllers/ToolbarController.js"></script>
     <script src="js/controllers/SidenavController.js"></script>
@@ -218,6 +192,7 @@
     <!--directives -->
     <script src="js/directives/userAvatar.js"></script>
     <script>
+        // This is for tour
         $(document).ready(function() {
             document.getElementById('activityBoxBtn').addEventListener('click', function() {
                 introJs().addSteps([{
@@ -246,6 +221,7 @@
         });
     </script>
     <script>
+        // This is for side navbar.
         /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
         function myFunction() {
             document.getElementById("myDropdown").classList.toggle("show");
@@ -263,6 +239,51 @@
                 }
             }
         }
+    </script>
+    <script>
+        // This is for the colour change when something is selected from left sidenav.
+        $(document).ready(function() {
+            $("#0").click(function(e) {
+                $(".selected").removeClass("selected");
+                $(this).addClass("selected");
+                e.stopPropagation();
+            });
+            $("#1").click(function(e) {
+                $(".selected").removeClass("selected");
+                $(this).addClass("selected");
+                e.stopPropagation();
+            });
+            $("#2").click(function(e) {
+                $(".selected").removeClass("selected");
+                $(this).addClass("selected");
+                e.stopPropagation();
+            });
+            $("#3").click(function(e) {
+                $(".selected").removeClass("selected");
+                $(this).addClass("selected");
+                e.stopPropagation();
+            });
+            $("#4").click(function(e) {
+                $(".selected").removeClass("selected");
+                $(this).addClass("selected");
+                e.stopPropagation();
+            });
+            $("#5").click(function(e) {
+                $(".selected").removeClass("selected");
+                $(this).addClass("selected");
+                e.stopPropagation();
+            });
+            $("#6").click(function(e) {
+                $(".selected").removeClass("selected");
+                $(this).addClass("selected");
+                e.stopPropagation();
+            });
+            $("#7").click(function(e) {
+                $(".selected").removeClass("selected");
+                $(this).addClass("selected");
+                e.stopPropagation();
+            });
+        });
     </script>
 </body>
 
