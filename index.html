@@ -2,6 +2,7 @@
 <html lang="en" ng-app="socialApp">
 
 <head>
+    <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,
      maximum-scale=1.0, user-scalable=no">
@@ -10,9 +11,11 @@
     <link href="dependencies/css/Material+Icons.css" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
     <!-- Joyride -->
-    <link rel="stylesheet" href="joyride-2.1.css">
-    <!-- Nice menu -->
-    <link rel="stylesheet" href="css/nice-menu.css">
+    <link rel="stylesheet" href="css/joyride-2.1.css">
+    <!-- Joyride -->
+    <script src="js/jquery-1.10.1.js"></script>
+    <script src="js/jquery.joyride-2.1.js"></script>
+
     <!-- Introjs -->
     <link rel="stylesheet" href="css/introjs.css">
     <title>The Social Network</title>
@@ -45,6 +48,7 @@
         <!-- Fourth tour item -->
         <md-list ng-controller="SidenavController as sc" data-step="4" data-intro="Your information">
             <!--Item 1 -->
+            <p>{{AppCtrl.name}}</p>
             <md-list-item ng-repeat="setting in sc.settings" layout="row" class="left-sidenav" href="{{setting.url}}" layout-align="start start" id="{{$index}}">
                 <a class="sidenavLink" md-ink-ripple layout="row" layout-align="start center">
                     <div class="inset">
@@ -171,7 +175,16 @@
         </md-content>
 
     </div>
-    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <ol id="myfirstjoyride">
+        <li data-id="num01">
+            <h2>First Element</h2>
+            <p>This is the toggle button for your account info.</p>
+        </li>
+        <li data-id="avtivityToolTip2">
+            <h2>Second Element</h2>
+            <p>This is the toggle button for your account info.</p>
+        </li>
+    </ol>
     <script src="dependencies/js/angular.min.js"></script>
     <script src="dependencies/js/angular-animate.min.js"></script>
     <script src="dependencies/js/angular-aria.min.js"></script>
@@ -203,9 +216,11 @@
                     element: document.querySelectorAll('#avtivityToolTip2')[0],
                     intro: "Ok, wasn't that fun?",
                     position: 'bottom'
+                }, {
+                    element: document.querySelectorAll('#avtivityToolTip3')[0],
+                    intro: "Ok, wasn't that fun?",
+                    position: 'bottom'
                 }]).setOptions({
-                    'showStepNumbers': 'false'
-                }).setOptions({
                     'showStepNumbers': 'false',
                     'scrollToElement': 'true'
                 }).start();
@@ -285,6 +300,17 @@
             });
         });
     </script>
+    <script>
+        // This is for Joyride
+        $(window).load(function() {
+            $('#myfirstjoyride').joyride({
+                'autoStart': true,
+                'modal': true,
+                'expose': true,
+            });
+        });
+    </script>
+
 </body>
 
 </html>

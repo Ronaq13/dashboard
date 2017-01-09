@@ -272,3 +272,7 @@ md-list-item.left-sidenav {
     border-left: 7px solid blue;
     background-color: #a9acad;
 }
+
+body {
+    position: relative;
+}

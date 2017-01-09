@@ -1,19 +1,19 @@
 /**
  * Created by mradul on 26/11/16.
  */
-(function(){
+(function() {
     angular.module('socialApp')
-        .controller('ToolbarController',['$mdSidenav', function($mdSidenav){
+        .controller('ToolbarController', ['$mdSidenav', function($mdSidenav) {
 
             this.search = false;
-            this.showSearch = function(){
+            this.showSearch = function() {
                 return this.search;
             };
-            this.toggleSearch = function () {
+            this.toggleSearch = function() {
                 this.search = !this.search;
             }
 
-            this.toggleSidenav = function(componentId){
+            this.toggleSidenav = function(componentId) {
                 $mdSidenav(componentId).toggle();
             }
         }]);
