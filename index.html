@@ -10,18 +10,15 @@
     <link rel="stylesheet" href="dependencies/css/angular-material.min.css">
     <link href="dependencies/css/Material+Icons.css" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
-    <!-- Joyride -->
-    <link rel="stylesheet" href="css/joyride-2.1.css">
-    <!-- Joyride -->
+    <!-- Jquery -->
     <script src="js/jquery-1.10.1.js"></script>
-    <script src="js/jquery.joyride-2.1.js"></script>
-
     <!-- Introjs -->
     <link rel="stylesheet" href="css/introjs.css">
+
     <title>The Social Network</title>
 </head>
 
-<body layout="row" ng-controller="AppController as AppCtrl">
+<body ui-tour layout="row" ng-controller="AppController as AppCtrl">
     <md-sidenav flex-xs="0" layout="column" class="md-sidenav-left md-whiteframe-10dp" md-component-id="left" md-is-locked-open="true" ng-class="{'noText': AppCtrl.iconsOnly}">
         <md-toolbar class="md-hue-2" style="min-height: 52px;">
             <span flex></span>
@@ -84,7 +81,7 @@
             <!--Main Toolbar -->
             <md-toolbar layout="row" ng-hide="tbc.showSearch()" layout-align="center center" md-whiteframe="5">
                 <!-- First tour element -->
-                <md-button id="num01" class="makingWidthSmall" aria-label="menu" ng-click="AppCtrl.toggleIcons()" data-step="1" data-intro="First tip">
+                <md-button tour-step tour-step-title="Main menu" tour-step-content="Navigate this" tour-step-order="0" id="num01" class="makingWidthSmall" aria-label="menu" ng-click="AppCtrl.toggleIcons()" data-step="1" data-intro="First tip">
                     <md-icon md-font-set="md">menu</md-icon>
                 </md-button>
                 <span flex="5" gt-md></span>
@@ -175,16 +172,6 @@
         </md-content>
 
     </div>
-    <ol id="myfirstjoyride">
-        <li data-id="num01">
-            <h2>First Element</h2>
-            <p>This is the toggle button for your account info.</p>
-        </li>
-        <li data-id="avtivityToolTip2">
-            <h2>Second Element</h2>
-            <p>This is the toggle button for your account info.</p>
-        </li>
-    </ol>
     <script src="dependencies/js/angular.min.js"></script>
     <script src="dependencies/js/angular-animate.min.js"></script>
     <script src="dependencies/js/angular-aria.min.js"></script>
@@ -204,6 +191,18 @@
     <script src="js/controllers/ContactsController2.js"></script>
     <!--directives -->
     <script src="js/directives/userAvatar.js"></script>
+    <!--dependencies:js-->
+
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/ngSmoothScroll/lib/angular-smooth-scroll.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/ez-ng/dist/ez-ng.js"></script>
+    <script src="bower_components/angular-hotkeys/build/hotkeys.js"></script>
+    <!--end dependencies-->
+
+    <!--Angular UI Tour-->
+    <script src="bower_components/angular-ui-tour/dist/angular-ui-tour.js"></script>
+
     <script>
         // This is for tour
         $(document).ready(function() {
@@ -297,16 +296,6 @@
                 $(".selected").removeClass("selected");
                 $(this).addClass("selected");
                 e.stopPropagation();
-            });
-        });
-    </script>
-    <script>
-        // This is for Joyride
-        $(window).load(function() {
-            $('#myfirstjoyride').joyride({
-                'autoStart': true,
-                'modal': true,
-                'expose': true,
             });
         });
     </script>

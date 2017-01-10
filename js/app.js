@@ -1,18 +1,18 @@
-(function(){
-    angular.module('socialApp', ['ngMaterial', 'ui.router'])
-        .config(function($mdIconProvider, $mdThemingProvider){
+(function() {
+    angular.module('socialApp', ['ngMaterial', 'ui.router', 'bm.uiTour'])
+        .config(function($mdIconProvider, $mdThemingProvider) {
             $mdIconProvider
-                .fontSet('md','material-icons');
+                .fontSet('md', 'material-icons');
 
             var customBlueMap = $mdThemingProvider
                 .extendPalette('light-blue', {
                     'contrastDefaultColor': 'light',
-                    'contrastDarkColors' : ['50'],
-                    '50' : 'ffffff'
+                    'contrastDarkColors': ['50'],
+                    '50': 'ffffff'
                 });
             $mdThemingProvider.definePalette('customBlue', customBlueMap);
             $mdThemingProvider.theme('default')
-                .primaryPalette('customBlue',{
+                .primaryPalette('customBlue', {
                     'default': '500',
                     'hue-1': '50'
                 })
@@ -20,28 +20,28 @@
             $mdThemingProvider.theme('input', 'default')
                 .primaryPalette('grey');
         })
-        .config(function($stateProvider, $urlRouterProvider){
+        .config(function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');
-    
-            $stateProvider
-        
-                
-                // HOME STATES AND NESTED VIEWS ========================================
-                .state('home', {
-                    url: '/',
-                    templateUrl: './view/account.html'
-                })
-            
-                
-                .state('contacts', {
-                    url: '/contacts',
-                    templateUrl: './view/contacts.html',
-                    controller: 'contacts2Controller',
-                    controllerAs: 'ct'
-                }) 
 
-                
-                .state('assignment',{
+            $stateProvider
+
+
+            // HOME STATES AND NESTED VIEWS ========================================
+                .state('home', {
+                url: '/',
+                templateUrl: './view/account.html'
+            })
+
+
+            .state('contacts', {
+                url: '/contacts',
+                templateUrl: './view/contacts.html',
+                controller: 'contacts2Controller',
+                controllerAs: 'ct'
+            })
+
+
+            .state('assignment', {
                     url: '/assignment',
                     templateUrl: './view/assignment.html'
                 })
@@ -53,19 +53,19 @@
                     url: '/bookmark',
                     templateUrl: './view/bookmark.html'
                 })
-                .state('description',{
+                .state('description', {
                     url: '/description',
                     templateUrl: './view/description.html'
                 })
-                .state('dialog',{
+                .state('dialog', {
                     url: '/dialog',
                     templateUrl: './view/dialog.html'
                 })
-                .state('dns',{
+                .state('dns', {
                     url: '/dns',
                     templateUrl: './view/dns.html'
                 })
-                .state('extension',{
+                .state('extension', {
                     url: '/extension',
                     templateUrl: './view/extension.html'
                 });
@@ -106,7 +106,7 @@
                 */
         })
         .filter('startsWithLetter', function() {
-            return function (items, letter) {
+            return function(items, letter) {
                 var filtered = [];
                 var letterMatch = new RegExp(letter, 'i');
                 for (var i = 0; i < items.length; i++) {
