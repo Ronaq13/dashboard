@@ -10,15 +10,19 @@
     <link rel="stylesheet" href="dependencies/css/angular-material.min.css">
     <link href="dependencies/css/Material+Icons.css" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
-    <!-- Jquery -->
-    <script src="js/jquery-1.10.1.js"></script>
+    <!-- ng-joyride -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <!--  <link href="bower_components/ng-joyride/ng-joyride.css" rel="stylesheet">  -->
+
+    <!-- Angular-tour -->
+    <link href="bower_components/angular-tour/dist/angular-tour.css" rel="stylesheet" type="text/css" />
     <!-- Introjs -->
-    <link rel="stylesheet" href="css/introjs.css">
+    <!-- <link rel="stylesheet" href="css/introjs.css"> -->
 
     <title>The Social Network</title>
 </head>
 
-<body ui-tour layout="row" ng-controller="AppController as AppCtrl">
+<body ui-tour ui-tour-on-show="welcome()" layout="row" ng-controller="AppController as AppCtrl">
     <md-sidenav flex-xs="0" layout="column" class="md-sidenav-left md-whiteframe-10dp" md-component-id="left" md-is-locked-open="true" ng-class="{'noText': AppCtrl.iconsOnly}">
         <md-toolbar class="md-hue-2" style="min-height: 52px;">
             <span flex></span>
@@ -45,7 +49,6 @@
         <!-- Fourth tour item -->
         <md-list ng-controller="SidenavController as sc" data-step="4" data-intro="Your information">
             <!--Item 1 -->
-            <p>{{AppCtrl.name}}</p>
             <md-list-item ng-repeat="setting in sc.settings" layout="row" class="left-sidenav" href="{{setting.url}}" layout-align="start start" id="{{$index}}">
                 <a class="sidenavLink" md-ink-ripple layout="row" layout-align="start center">
                     <div class="inset">
@@ -72,26 +75,25 @@
     <div flex-xs="100" layout="column" layout-fill role="main">
 
         <!--Fab button -->
-        <md-button class="md-fab md-fab-bottom-right" aria-label="add">
+        <md-button style="position: fixed;" class="md-fab md-fab-bottom-right" aria-label="add">
             <md-icon md-font-set="md">add</md-icon>
         </md-button>
-
         <!--Toolbar-->
         <div ng-controller="ToolbarController as tbc">
             <!--Main Toolbar -->
             <md-toolbar layout="row" ng-hide="tbc.showSearch()" layout-align="center center" md-whiteframe="5">
                 <!-- First tour element -->
-                <md-button tour-step tour-step-title="Main menu" tour-step-content="Navigate this" tour-step-order="0" id="num01" class="makingWidthSmall" aria-label="menu" ng-click="AppCtrl.toggleIcons()" data-step="1" data-intro="First tip">
+                <md-button id="e0" class="makingWidthSmall" aria-label="menu" ng-click="AppCtrl.toggleIcons()" data-step="1" data-intro="First tip">
                     <md-icon md-font-set="md">menu</md-icon>
                 </md-button>
                 <span flex="5" gt-md></span>
                 <h3>Dashboard</h3>
                 <span flex></span>
                 <!-- Second tour Element -->
-                <md-button class="makingWidthSmall" aria-label="search" ng-click="tbc.toggleSearch()" data-step="2" data-intro="Second tip">
+                <md-button tour-step tour-step-title="Step 1" tour-step-content="Enjoy using the app!" tour-step-order="0" tour-step-placement="bottom" class="makingWidthSmall" aria-label="search" ng-click="tbc.toggleSearch()" data-step="2" data-intro="Second tip">
                     <md-icon md-font-set="md">search</md-icon>
                 </md-button>
-                <md-button class="makingWidthSmall" aria-label="search" id="completeBtn">
+                <md-button class="makingWidthSmall" aria-label="search" id="completeBtn" ng-click="tour.start()">
                     <md-icon md-font-set="md">first_page</md-icon>
                 </md-button>
                 <md-button class="makingWidthSmall" aria-label="search" id="activityBoxBtn">
@@ -117,7 +119,7 @@
                     </md-menu-content>
                 </md-menu>
                 <!-- Third tour item here -->
-                <md-button class="makingWidthSmall" aria-label="options" ng-click="tbc.toggleSidenav('right')" data-step="3" data-intro="Second tip">
+                <md-button tour-step tour-step-order="1" tour-step-placement="bottom" class="makingWidthSmall" aria-label="options" ng-click="tbc.toggleSidenav('right')">
                     <md-icon md-font-set="md">more_vert</md-icon>
                 </md-button>
             </md-toolbar>
@@ -142,12 +144,17 @@
             </md-toolbar>
         </div>
 
-        <!--Content Area-->
-        <md-content flex md-scroll-y>
-            <div ui-view></div>
-
-            <!--Right Sidenav-->
-            <md-sidenav class="md-sidenav-right" md-white-frame="10" md-component-id="right">
+        <!-- 
+        <div flex tour-step tour-step="2" style="margin-top: 2000px; margin-left: 400px;">
+            <p>Is scrolling working</p>
+        </div>
+        -->
+        <div ui-view></div>
+        <!--Content Area 
+        <md-content flex>
+            <!-- <div ui-view></div> -->
+        <!--Right Sidenav 
+            <md-sidenav class="md-sidenav-right" md-white-frame="10" md-component-id="right" md-scroll-y>
                 <md-tabs md-stretch-tabs md-center-tabs md-border-bottom>
                     <md-tab id="tab1">
                         <md-tab-label>One</md-tab-label>
@@ -170,7 +177,7 @@
                 </md-tabs>
             </md-sidenav>
         </md-content>
-
+        -->
     </div>
     <script src="dependencies/js/angular.min.js"></script>
     <script src="dependencies/js/angular-animate.min.js"></script>
@@ -179,9 +186,34 @@
     <script src="dependencies/js/angular-touch.min.js"></script>
     <script src="dependencies/js/angular-material.min.js"></script>
     <script src="dependencies/js/angular-ui-router.min.js"></script>
-    <!-- Intojs -->
-    <script src="js/intro.js"></script>
+    <!-- ng-joyride 
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/ng-joyride/ng-joyride.js"></script>
+    -->
 
+    <!-- Angular-tour 
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-tour/dist/angular-tour.js"></script>
+    -->
+    <!-- Angular-ui-tour -->
+    <!--dependencies:js-->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/ngSmoothScroll/lib/angular-smooth-scroll.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/ez-ng/dist/ez-ng.js"></script>
+    <script src="bower_components/angular-hotkeys/build/hotkeys.js"></script>
+    <!--end dependencies-->
+    <!--Angular UI Tour-->
+    <script src="bower_components/angular-ui-tour/dist/angular-ui-tour.js"></script>
+
+
+    <!-- Intojs 
+    <script src="js/intro.js"></script>
+    -->
     <script src="js/app.js"></script>
 
     <!--controllers -->
@@ -191,20 +223,10 @@
     <script src="js/controllers/ContactsController2.js"></script>
     <!--directives -->
     <script src="js/directives/userAvatar.js"></script>
-    <!--dependencies:js-->
-
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/ngSmoothScroll/lib/angular-smooth-scroll.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/ez-ng/dist/ez-ng.js"></script>
-    <script src="bower_components/angular-hotkeys/build/hotkeys.js"></script>
-    <!--end dependencies-->
-
-    <!--Angular UI Tour-->
-    <script src="bower_components/angular-ui-tour/dist/angular-ui-tour.js"></script>
 
     <script>
         // This is for tour
+        /*
         $(document).ready(function() {
             document.getElementById('activityBoxBtn').addEventListener('click', function() {
                 introJs().addSteps([{
@@ -213,10 +235,6 @@
                     position: 'bottom'
                 }, {
                     element: document.querySelectorAll('#avtivityToolTip2')[0],
-                    intro: "Ok, wasn't that fun?",
-                    position: 'bottom'
-                }, {
-                    element: document.querySelectorAll('#avtivityToolTip3')[0],
                     intro: "Ok, wasn't that fun?",
                     position: 'bottom'
                 }]).setOptions({
@@ -233,6 +251,7 @@
             });
             console.log("ready!");
         });
+        */
     </script>
     <script>
         // This is for side navbar.
@@ -299,7 +318,13 @@
             });
         });
     </script>
-
+    <script>
+        $(document).ready(function() {
+            function welcome() {
+                alert('Welcome');
+            };
+        });
+    </script>
 </body>
 
 </html>

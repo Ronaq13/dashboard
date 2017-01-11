@@ -6,5 +6,8 @@
   "description": "",
   "main": "index.html",
   "license": "MIT",
-  "homepage": "index.html"
+  "homepage": "index.html",
+  "dependencies": {
+    "ng-joyride": "^0.1.20"
+  }
 }

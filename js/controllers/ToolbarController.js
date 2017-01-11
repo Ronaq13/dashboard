@@ -11,10 +11,9 @@
             };
             this.toggleSearch = function() {
                 this.search = !this.search;
-            }
+            };
 
-            this.toggleSidenav = function(componentId) {
-                $mdSidenav(componentId).toggle();
-            }
+
+
         }]);
 })();

@@ -1,13 +1,22 @@
 (function() {
     angular.module('socialApp')
-        .controller('AppController', function($scope) {
+        .controller('AppController', ['$scope', '$location', '$anchorScroll', function($scope) {
             this.iconsOnly = true;
 
             this.toggleIcons = function() {
                 this.iconsOnly = !this.iconsOnly;
-            }
+            };
 
-            $scope.name = "Raounak Sharma"
+            this.joyStart = function() {
+                $scope.startJoyRide = true;
+            };
 
-        });
+            $scope.name = "";
+            $scope.welcome = function() {
+                $scope.name = "Raounak Sharma";
+            };
+            $scope.letsStart = function(tour) {
+                tour.start();
+            };
+        }]);
 })();

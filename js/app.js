@@ -21,15 +21,20 @@
                 .primaryPalette('grey');
         })
         .config(function($stateProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise('/');
+            $urlRouterProvider.otherwise('/home');
 
             $stateProvider
 
 
             // HOME STATES AND NESTED VIEWS ========================================
                 .state('home', {
-                url: '/',
+                url: '/home',
                 templateUrl: './view/account.html'
+            })
+
+            .state('home2', {
+                url: '/home2',
+                templateUrl: './view/account2.html'
             })
 
 
