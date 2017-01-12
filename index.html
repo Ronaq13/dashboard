@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="dependencies/css/angular-material.min.css">
     <link href="dependencies/css/Material+Icons.css" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
-    <!-- ng-joyride -->
+    <!-- CK editor -->
+    <link href="ckeditor/samples/css/samples.css" rel="stylesheet">
+    <link href="ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css" rel="stylesheet">
+    <!-- ng-joyride 
     <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <!--  <link href="bower_components/ng-joyride/ng-joyride.css" rel="stylesheet">  -->
 
@@ -24,7 +27,7 @@
 
 <body ui-tour ui-tour-on-show="welcome()" layout="row" ng-controller="AppController as AppCtrl">
     <md-sidenav flex-xs="0" layout="column" class="md-sidenav-left md-whiteframe-10dp" md-component-id="left" md-is-locked-open="true" ng-class="{'noText': AppCtrl.iconsOnly}">
-        <md-toolbar class="md-hue-2" style="min-height: 52px;">
+        <md-toolbar class="md-hue-2" style="min-height: 54px;">
             <span flex></span>
             <div layout="column" class="md-toolbar-tools-bottom inset">
                 <div ng-class="{'none': AppCtrl.iconsOnly}">
@@ -87,10 +90,11 @@
                     <md-icon md-font-set="md">menu</md-icon>
                 </md-button>
                 <span flex="5" gt-md></span>
-                <h3>Dashboard</h3>
+                <h3 style="color: white;">Dashboard</h3>
                 <span flex></span>
                 <!-- Second tour Element -->
-                <md-button tour-step tour-step-title="Step 1" tour-step-content="Enjoy using the app!" tour-step-order="0" tour-step-placement="bottom" class="makingWidthSmall" aria-label="search" ng-click="tbc.toggleSearch()" data-step="2" data-intro="Second tip">
+                <md-button tour-step tour-step-title="Step 1" tour-step-content="<div>Here you can see your all activity</div><button id='info'>info</button>" tour-step-order="0" tour-step-placement="bottom" class="makingWidthSmall" aria-label="search" ng-click="tbc.toggleSearch()"
+                    data-step="2" data-intro="Second tip">
                     <md-icon md-font-set="md">search</md-icon>
                 </md-button>
                 <md-button class="makingWidthSmall" aria-label="search" id="completeBtn" ng-click="tour.start()">
@@ -119,7 +123,7 @@
                     </md-menu-content>
                 </md-menu>
                 <!-- Third tour item here -->
-                <md-button tour-step tour-step-order="1" tour-step-placement="bottom" class="makingWidthSmall" aria-label="options" ng-click="tbc.toggleSidenav('right')">
+                <md-button tour-step tour-step-order="1" tour-step-title="Right side nav" tour-step-content="More Options" tour-step-placement="bottom" class="makingWidthSmall" aria-label="options" ng-click="tbc.toggleSidenav('right')">
                     <md-icon md-font-set="md">more_vert</md-icon>
                 </md-button>
             </md-toolbar>
@@ -149,7 +153,10 @@
             <p>Is scrolling working</p>
         </div>
         -->
+
+
         <div ui-view></div>
+
         <!--Content Area 
         <md-content flex>
             <!-- <div ui-view></div> -->
@@ -209,6 +216,9 @@
     <!--end dependencies-->
     <!--Angular UI Tour-->
     <script src="bower_components/angular-ui-tour/dist/angular-ui-tour.js"></script>
+    <!-- CK-editor -->
+    <script src="ckeditor/ckeditor.js"></script>
+    <script src="ckeditor/samples/js/sample.js"></script>
 
 
     <!-- Intojs 
@@ -221,6 +231,8 @@
     <script src="js/controllers/SidenavController.js"></script>
     <script src="js/controllers/AppController.js"></script>
     <script src="js/controllers/ContactsController2.js"></script>
+    <script src="js/controllers/ckeditorController.js"></script>
+
     <!--directives -->
     <script src="js/directives/userAvatar.js"></script>
 
@@ -318,13 +330,18 @@
             });
         });
     </script>
-    <script>
+    <!-- <script>
         $(document).ready(function() {
-            function welcome() {
-                alert('Welcome');
-            };
+            if (document.getElementById('info') == null) {
+                document.getElementById('info').addEventListener('click', function() {
+                    alert("welcome");
+                });
+            } else {
+                alert("not getting info");
+            }
         });
     </script>
+    -->
 </body>
 
 </html>

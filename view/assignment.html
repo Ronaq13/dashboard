@@ -1,2 +1,104 @@
-<h1>Assignment</h1>
+<!--<h1>Assignment</h1>
 <p>Assignment</p>
+-->
+
+
+<div layout="row" ng-controller="ckeditorController">
+    <!-- <div id="col_1" flex="20" layout="column" layout-padding>
+        <md-toolbar class="md-hue-3">
+            <div class="md-toolbar-tools">
+                <span>{{name}}</span>
+            </div>
+        </md-toolbar>
+        <div>
+
+        </div>
+    </div>
+-->
+    <md-sidenav layout-padding class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+        <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Sidenav Left</h1>
+        </md-toolbar>
+        <md-content layout-padding>
+            <md-button ng-click="close()" class="md-primary" hide-gt-md>
+                Close Sidenav Left
+            </md-button>
+            <p hide show-gt-md>
+                This sidenav is locked open on your device. To go back to the default behavior, narrow your display.
+            </p>
+        </md-content>
+    </md-sidenav>
+    <md-content layout="row">
+        <div id="col_2" flex="30" layout="column" layout-padding>
+            <md-toolbar class="md-hue-3">
+                <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
+                    Toggle left
+                </md-button>
+                <span flex></span>
+                <md-button class="makingWidthSmall" aria-label="search" ng-click="null">
+                    <md-icon md-font-set="md">search</md-icon>
+                </md-button>
+            </md-toolbar>
+            <md-content style="margin-top: 30px;">
+                <md-list>
+                    <md-list-item ng-repeat="content in contents" ng-click="null" layout="column">
+                        <div class="md-list-item-text" layout="column" layout-gt-md="row">
+                            <div>
+                                <h3>{{ content.heading }}</h3>
+                                <p style="padding-top: 10px">
+                                    Secondary line text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam massa quam. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia
+                                    nostra, per inceptos himenaeos.
+                                </p>
+                            </div>
+                            <img ng-src="{{content.imageSRC}}?{{$index}}" style="border-radius: 10%;padding-top:10px;" alt="photo" width="100px;" height="100px" />
+                        </div>
+                    </md-list-item>
+                </md-list>
+            </md-content>
+        </div>
+        <div id="col_3" flex layout="column" layout-padding>
+            <div style="background-color: lightgray;" layout="row">
+                <md-button class="md-raised">
+                    <md-icon class="material-icons" style="color: lightgray;">add</md-icon>
+                </md-button>
+                <span flex="grow"></span>
+                <md-button class="md-raised">Edit</md-button>
+                <md-button class="md-raised md-warn">Delete</md-button>
+            </div>
+            <!-- CK-editor ---------------------------------------------- -->
+            <div>
+                <md-card style="height: 550px; margin-top: 30px; box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
+                    <md-card-content flex layout="column">
+                        <div id="main" flex="grow" style="padding-top: 10px;" class="col-xs-12">
+                            <main>
+                                <div class="adjoined-bottom">
+                                    <div class="grid-container">
+                                        <div class="grid-width-100">
+                                            <div id="editor">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </main>
+                        </div>
+
+                        <div>
+                            <md-toolbar style="min-height: 10px; background-color: white;">
+                                <div class="md-toolbar-tools">
+                                    <md-button class="md-icon-button" style="color: gray;"><i class="material-icons">attach_file</i></md-button>
+                                    <md-button class="md-icon-button" style="color: gray;"><i class="material-icons">share</i></md-button>
+                                    <md-button class="md-icon-button" style="color: gray;"><i class="material-icons">delete</i></md-button>
+                                    <span flex></span>
+                                    <md-button class="md-primary" style="color: #3f51b5;">SAVE</md-button>
+                                </div>
+                            </md-toolbar>
+                        </div>
+                    </md-card-content>
+                </md-card>
+            </div>
+            <!-- CK-editor ends -->
+        </div>
+    </md-content>
+
+
+</div>

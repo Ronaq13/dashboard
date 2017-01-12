@@ -33,10 +33,14 @@
             })
 
             .state('home2', {
-                url: '/home2',
-                templateUrl: './view/account2.html'
-            })
-
+                    url: '/home2',
+                    templateUrl: './view/account2.html'
+                })
+                //    .state('ckeditor', {
+                //        url: '/ckeditor',
+                //        templateUrl: 'view/ckeditor.html',
+                //       controller: 'ckeditorController'
+                //   })
 
             .state('contacts', {
                 url: '/contacts',
@@ -49,6 +53,7 @@
             .state('assignment', {
                     url: '/assignment',
                     templateUrl: './view/assignment.html'
+
                 })
                 .state('backup', {
                     url: '/backup',

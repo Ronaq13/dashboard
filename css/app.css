@@ -24,7 +24,7 @@
     
     md-toolbar:not(.md-hue-1),
     .md-fab {
-        color: #fff;
+        color: black;
         fill: #fff;
     }
     
@@ -267,4 +267,12 @@
     .selected {
         border-left: 7px solid blue;
         background-color: #a9acad;
+    }
+    
+    #col_1 {
+        border-right: 2px solid lightgray;
+    }
+    
+    #col_2 {
+        border-right: 2px solid lightgray;
     }
