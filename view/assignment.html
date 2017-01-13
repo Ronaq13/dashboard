@@ -3,7 +3,7 @@
 -->
 
 
-<div layout="row" ng-controller="ckeditorController">
+<div layout="row">
     <!-- <div id="col_1" flex="20" layout="column" layout-padding>
         <md-toolbar class="md-hue-3">
             <div class="md-toolbar-tools">
@@ -15,24 +15,26 @@
         </div>
     </div>
 -->
-    <md-sidenav layout-padding class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-        <md-toolbar class="md-theme-indigo">
-            <h1 class="md-toolbar-tools">Sidenav Left</h1>
+    <md-sidenav tabindex="0" layout-padding class="md-sidenav-left" md-component-id="left2" md-is-locked-open="$mdMedia('gt-md')">
+        <md-toolbar class="md-hue-3">
+            <h1 class="md-toolbar-tools">Notebook</h1>
         </md-toolbar>
-        <md-content layout-padding>
-            <md-button ng-click="close()" class="md-primary" hide-gt-md>
-                Close Sidenav Left
-            </md-button>
-            <p hide show-gt-md>
-                This sidenav is locked open on your device. To go back to the default behavior, narrow your display.
-            </p>
-        </md-content>
+
+        <div data-angular-treeview="true" data-tree-id="mytree" data-tree-model="roleList" data-node-id="roleId" data-node-label="roleName" data-node-children="children">
+        </div>
+        <!--  <div hide show-gt-md data-angular-treeview="true" data-tree-id="abc" data-tree-model="treedata" data-node-id="id" data-node-label="label" data-node-children="children">
+                Here place the tree
+            </div> -->
+        <md-button ng-click="close()" class="md-primary" hide-gt-md>
+            Close Sidenav Left
+        </md-button>
+
     </md-sidenav>
     <md-content layout="row">
         <div id="col_2" flex="30" layout="column" layout-padding>
-            <md-toolbar class="md-hue-3">
+            <md-toolbar class="md-hue-3" layout="row">
                 <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
-                    Toggle left
+                    Notebook
                 </md-button>
                 <span flex></span>
                 <md-button class="makingWidthSmall" aria-label="search" ng-click="null">

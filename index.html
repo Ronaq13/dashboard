@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="dependencies/css/angular-material.min.css">
     <link href="dependencies/css/Material+Icons.css" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
+    <!-- treeview -->
+    <link rel="stylesheet" type="text/css" href="css/angular.treeview.css">
     <!-- CK editor -->
     <link href="ckeditor/samples/css/samples.css" rel="stylesheet">
     <link href="ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css" rel="stylesheet">
@@ -26,7 +28,7 @@
 </head>
 
 <body ui-tour ui-tour-on-show="welcome()" layout="row" ng-controller="AppController as AppCtrl">
-    <md-sidenav flex-xs="0" layout="column" class="md-sidenav-left md-whiteframe-10dp" md-component-id="left" md-is-locked-open="true" ng-class="{'noText': AppCtrl.iconsOnly}">
+    <md-sidenav flex-xs="0" style="overflow: hidden;" layout="column" class="md-sidenav-left md-whiteframe-10dp" md-component-id="left" md-is-locked-open="true" ng-class="{'noText': AppCtrl.iconsOnly}">
         <md-toolbar class="md-hue-2" style="min-height: 54px;">
             <span flex></span>
             <div layout="column" class="md-toolbar-tools-bottom inset">
@@ -220,7 +222,8 @@
     <script src="ckeditor/ckeditor.js"></script>
     <script src="ckeditor/samples/js/sample.js"></script>
 
-
+    <!-- treeview -->
+    <script type="text/javascript" src="js/angular.treeview.js"></script>
     <!-- Intojs 
     <script src="js/intro.js"></script>
     -->

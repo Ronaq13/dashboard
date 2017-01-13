@@ -8,67 +8,53 @@
             ];
 
             initSample();
+
+            //------------------For Notebook sidebar-----------------------------------
             $scope.toggleLeft = function() {
-                $mdSidenav('left').toggle();
-            };
-            //--------------------------------------------------------------------
-            //   $scope.toggleLeft = buildDelayedToggler();
-            $scope.toggleRight = buildToggler('right');
-            $scope.isOpenRight = function() {
-                return $mdSidenav('right').isOpen();
+                $mdSidenav('left2').toggle();
             };
 
-            /**
-             * Supplies a function that will continue to operate until the
-             * time is up.
-             */
-            function debounce(func, wait, context) {
-                var timer;
-
-                return function debounced() {
-                    var context = $scope,
-                        args = Array.prototype.slice.call(arguments);
-                    $timeout.cancel(timer);
-                    timer = $timeout(function() {
-                        timer = undefined;
-                        func.apply(context, args);
-                    }, wait || 10);
-                };
-            }
-
-            /**
-             * Build handler to open/close a SideNav; when animation finishes
-             * report completion in console
-             */
-            function buildDelayedToggler() {
-                // Component lookup should always be available since we are not using `ng-if`
-                $mdSidenav('left')
-                    .toggle()
-                    .then(function() {
-                        console.log("toggle " + "left" + " is done");
-                    });
-            }
-
-            function buildToggler(navID) {
-                return function() {
-                    // Component lookup should always be available since we are not using `ng-if`
-                    $mdSidenav(navID)
-                        .toggle()
+            $scope.close = function() {
+                    $mdSidenav('left2').close()
                         .then(function() {
-                            console.log("toggle " + navID + " is done");
+                            $log.debug("close LEFT is done");
                         });
                 }
-            }
+                //----------------For treeview --------------------
+            $scope.theme = 'lime';
+            var iterator = 0;
 
-            function close() {
-                // Component lookup should always be available since we are not using `ng-if`
-                $mdSidenav('left').close()
-                    .then(function() {
-                        $log.debug("close LEFT is done");
-                    });
+            $scope.roleList = [{
+                    "roleName": "User",
+                    "roleId": "role1",
+                    "children": [
+                        { "roleName": "subUser1", "roleId": "role11", "children": [] },
+                        {
+                            "roleName": "subUser2",
+                            "roleId": "role12",
+                            "children": [{
+                                "roleName": "subUser2-1",
+                                "roleId": "role121",
+                                "children": [
+                                    { "roleName": "subUser2-1-1", "roleId": "role1211", "children": [] },
+                                    { "roleName": "subUser2-1-2", "roleId": "role1212", "children": [] }
+                                ]
+                            }]
+                        }
+                    ]
+                },
 
-            }
+                { "roleName": "Admin", "roleId": "role2", "children": [] },
 
+                { "roleName": "Guest", "roleId": "role3", "children": [] }
+            ];
+
+            $scope.$watch('mytree.currentNode', function(newObj, oldObj) {
+                if ($scope.mytree && angular.isObject($scope.mytree.currentNode)) {
+                    console.log('Node Selected!!');
+                    console.log($scope.mytree.currentNode);
+                }
+            }, false);
 
         });
 

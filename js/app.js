@@ -1,5 +1,5 @@
 (function() {
-    angular.module('socialApp', ['ngMaterial', 'ui.router', 'bm.uiTour'])
+    angular.module('socialApp', ['ngMaterial', 'ngMessages', 'ngAnimate', 'ngAria', 'ui.router', 'bm.uiTour', 'angularTreeview'])
         .config(function($mdIconProvider, $mdThemingProvider) {
             $mdIconProvider
                 .fontSet('md', 'material-icons');
@@ -52,7 +52,8 @@
 
             .state('assignment', {
                     url: '/assignment',
-                    templateUrl: './view/assignment.html'
+                    templateUrl: './view/assignment.html',
+                    controller: 'ckeditorController'
 
                 })
                 .state('backup', {

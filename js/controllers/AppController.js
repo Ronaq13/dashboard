@@ -1,6 +1,6 @@
 (function() {
     angular.module('socialApp')
-        .controller('AppController', ['$scope', '$location', '$anchorScroll', function($scope) {
+        .controller('AppController', function($scope, $timeout, $mdSidenav, $log) {
             this.iconsOnly = true;
 
             this.toggleIcons = function() {
@@ -18,5 +18,8 @@
             $scope.letsStart = function(tour) {
                 tour.start();
             };
-        }]);
+            //--------------------------------------
+
+
+        });
 })();
