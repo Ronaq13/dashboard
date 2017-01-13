@@ -3,7 +3,7 @@
 -->
 
 
-<div layout="row">
+<div layout="row" style="height: 800px;">
     <!-- <div id="col_1" flex="20" layout="column" layout-padding>
         <md-toolbar class="md-hue-3">
             <div class="md-toolbar-tools">
@@ -15,9 +15,9 @@
         </div>
     </div>
 -->
-    <md-sidenav tabindex="0" layout-padding class="md-sidenav-left" md-component-id="left2" md-is-locked-open="$mdMedia('gt-md')">
+    <md-sidenav class="md-sidenav-left" md-component-id="left2" md-is-locked-open="$mdMedia('gt-md')">
         <md-toolbar class="md-hue-3">
-            <h1 class="md-toolbar-tools">Notebook</h1>
+            <div class="md-toolbar-tools">Notebook</div>
         </md-toolbar>
 
         <div data-angular-treeview="true" data-tree-id="mytree" data-tree-model="roleList" data-node-id="roleId" data-node-label="roleName" data-node-children="children">
@@ -25,14 +25,15 @@
         <!--  <div hide show-gt-md data-angular-treeview="true" data-tree-id="abc" data-tree-model="treedata" data-node-id="id" data-node-label="label" data-node-children="children">
                 Here place the tree
             </div> -->
-        <md-button ng-click="close()" class="md-primary" hide-gt-md>
-            Close Sidenav Left
+        <br><br>
+        <md-button ng-click="close()" class="md-raised md-warn" hide-gt-md ng-cloak>
+            Close
         </md-button>
 
     </md-sidenav>
     <md-content layout="row">
         <div id="col_2" flex="30" layout="column" layout-padding>
-            <md-toolbar class="md-hue-3" layout="row">
+            <md-toolbar style="min-height: 64px;" class="md-hue-3" layout="row">
                 <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
                     Notebook
                 </md-button>
@@ -41,7 +42,7 @@
                     <md-icon md-font-set="md">search</md-icon>
                 </md-button>
             </md-toolbar>
-            <md-content style="margin-top: 30px;">
+            <md-content>
                 <md-list>
                     <md-list-item ng-repeat="content in contents" ng-click="null" layout="column">
                         <div class="md-list-item-text" layout="column" layout-gt-md="row">

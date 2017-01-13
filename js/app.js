@@ -53,7 +53,8 @@
             .state('assignment', {
                     url: '/assignment',
                     templateUrl: './view/assignment.html',
-                    controller: 'ckeditorController'
+                    controller: 'ckeditorController',
+                    css: "./css/app.css"
 
                 })
                 .state('backup', {
