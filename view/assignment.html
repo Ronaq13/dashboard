@@ -1,6 +1,6 @@
 <div layout="row" style="height: 800px;">
 
-    <md-sidenav class="md-sidenav-left" style="width: 250px; min-width: 250px; max-width: 250px;" md-component-id="left2" md-is-locked-open="$mdMedia('gt-md')">
+    <md-sidenav id="col_1" class="md-sidenav-left" style="width: 250px; min-width: 250px; max-width: 250px;" md-component-id="left2" md-is-locked-open="$mdMedia('gt-md')">
         <md-toolbar style="min-height: 64px;" class="md-hue-3">
             <h1 class="md-toolbar-tools">Notebook</h1>
         </md-toolbar>
@@ -14,7 +14,7 @@
         </md-content>
     </md-sidenav>
     <md-content layout="row">
-        <div id="col_2" flex="30" layout="column" layout-padding>
+        <div id="col_2" flex="30" layout="column">
             <md-toolbar style="min-height: 64px;" class="md-hue-3" layout="row">
                 <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
                     Notebook
@@ -26,24 +26,24 @@
             </md-toolbar>
             <md-content>
                 <md-list>
-                    <md-list-item ng-repeat="content in contents" ng-click="null">
+                    <md-list-item style="padding-left: 0px;padding-right: 0px;" ng-repeat="content in contents" ng-click="null">
                         <div class="md-list-item-text" layout="column" layout-gt-md="row">
                             <div>
                                 <h4>{{ content.heading }}</h4>
                                 <img ng-src="{{content.imageSRC}}?{{$index}}" style="border-radius: 10%;" alt="photo" width="100px;" height="100px" />
-                                <h5 style="padding-top: 10px">
+                                <p style="padding-top: 10px">
                                     Secondary line text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam massa quam. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia
                                     nostra, per inceptos himenaeos.
-                                </h5>
+                                </p>
                             </div>
                         </div>
                     </md-list-item>
                 </md-list>
             </md-content>
         </div>
-        <div id="col_3" flex layout="column" layout-padding>
+        <div id="col_3" flex layout="column">
             <md-toolbar style="min-height: 64px;" class="md-hue-3" layout="row">
-                <div class="md-toolbar-tools">
+                <div class="md-toolbar-tools" style="padding: 16px 16px 0px 16px;">
                     <md-button class="md-icon-button" style="color: gray;"><i class="material-icons">note_add</i></md-button>
                     <span flex></span>
                     <md-button class="md-icon-button" style="color: gray;"><i class="material-icons">edit</i></md-button>
@@ -54,9 +54,9 @@
             <!-- <div style="padding: 0px 0px 0px 0px;">
                  <md-card style="padding:0px 0px 0px 0px; height: 550px; margin-top: 30px; box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);"> -->
             <md-content style="padding:0px 0px 0px 0px;">
-                <md-card style="height: 550px; margin-top: 30px;" class="md-whiteframe=" 5 "">
+                <md-card style="height: 700px; margin-top: 30px;" class="md-whiteframe=" 5 "">
                     <md-card-content flex layout="column">
-                        <div id="main" flex="grow" style="padding-top: 10px;" class="col-xs-12">
+                        <div id="main" flex="grow" class="col-xs-12">
                             <main>
                                 <div class="adjoined-bottom">
                                     <div class="grid-container">
