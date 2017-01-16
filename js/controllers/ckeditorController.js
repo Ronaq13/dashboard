@@ -16,14 +16,17 @@
                 },
                 {
                     heading: "This is heading",
+                    MyButtonNames: ['arrow_back', 'delete', 'group_add'],
                     content: "The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
                 },
                 {
                     heading: "This is heading",
+                    MyButtonNames: ['call', 'first_page', 'group_add'],
                     content: "The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
                 },
                 {
                     heading: "This is heading",
+                    MyButtonNames: ['search', 'loading', 'group_add'],
                     content: "The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
                 }
             ];
@@ -182,6 +185,7 @@
                 { "roleName": "Admin", "roleId": "role2", "children": [] },
 
                 { "roleName": "Guest", "roleId": "role3", "children": [] }
+
 
             ];
 
