@@ -264,7 +264,7 @@
         align-self: auto;
     }
     
-    .selected {
+    .selectedTab {
         border-left: 7px solid blue;
         background-color: #a9acad;
     }
@@ -330,7 +330,6 @@
     }
     
     md-sidenav>md-content>div[data-tree-model] li .selected {
-        background-color: #aaddff;
         font-weight: bold;
         padding: 1px 5px;
     }

@@ -7,8 +7,26 @@
                 { heading: 'Evening', text: "", imageSRC: 'img/a3.jpg' }
             ];
 
-            initSample();
-
+            // initSample();
+            //------------------For content in column 2--------------------------------
+            this.Information = [{
+                    heading: "This is heading",
+                    MyButtonNames: ['call', 'email', 'group_add'],
+                    content: "The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
+                },
+                {
+                    heading: "This is heading",
+                    content: "The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
+                },
+                {
+                    heading: "This is heading",
+                    content: "The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
+                },
+                {
+                    heading: "This is heading",
+                    content: "The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
+                }
+            ];
             //------------------For Notebook sidebar-----------------------------------
             $scope.toggleLeft = function() {
                 $mdSidenav('left2').toggle();

@@ -54,6 +54,7 @@
                     url: '/assignment',
                     templateUrl: './view/assignment.html',
                     controller: 'ckeditorController',
+                    controllerAs: 'ck',
                     css: "./css/app.css"
 
                 })
