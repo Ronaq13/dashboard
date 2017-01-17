@@ -19,6 +19,7 @@
                 <div id="col_2" flex="grow" layout="column">
                     <md-toolbar style="min-height: 50px;" class="md-hue-3" layout="row">
                         <div class="md-toolbar-tools" style="padding: 4px 16px 0px 16px;">
+                            <md-button class="md-icon-button" style="color: gray;" ng-hide="!isContentShow" ng-click="isContentShowToggle()"><i class="material-icons">arrow_back</i></md-button>
                             <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
                                 <span style="color:white;">Notebook</span>
                             </md-button>
@@ -29,12 +30,11 @@
                         </div>
                     </md-toolbar>
                     <md-content>
-                        <div layout="row" layout-align="center start" style="justify-content: space-around;" layout-fill layout-wrap>
+                        <div ng-hide="isContentShow" layout="row" layout-align="center start" style="justify-content: space-around;" layout-fill layout-wrap>
                             <md-card flex-xs="100" flex-sm="50" flex-md="33" flex-lg="25" flex-gt-lg="20" ng-repeat="info in ck.Information" layout="column" layout-align="center center" layout-margin layout-padding class="md-whiteframe-2dp">
                                 <md-card-title>
-                                    <md-card-title-text>
-                                        <span class="md-headline" ng-click="null">{{info.heading}}</span>
-                                        <span class="md-subhead">Card subheader</span>
+                                    <md-card-title-text ng-click="null">
+                                        <div class="md-headline" ng-click="isContentShowToggle()">{{info.heading}}</div>
                                     </md-card-title-text>
                                 </md-card-title>
                                 <md-card-content>

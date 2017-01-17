@@ -8,6 +8,11 @@
             ];
 
             // initSample();
+            //---------------For toggle in views--------------------------------
+            $scope.isContentShow = false;
+            $scope.isContentShowToggle = function() {
+                $scope.isContentShow = !$scope.isContentShow;
+            };
             //------------------For content in column 2--------------------------------
             this.Information = [{
                     heading: "This is heading",
