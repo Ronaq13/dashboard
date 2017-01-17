@@ -333,3 +333,7 @@
         font-weight: bold;
         padding: 1px 5px;
     }
+    
+    #0card>p {
+        background-color: blue;
+    }

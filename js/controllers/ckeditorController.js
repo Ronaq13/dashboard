@@ -7,32 +7,39 @@
                 { heading: 'Evening', text: "", imageSRC: 'img/a3.jpg' }
             ];
 
-            // initSample();
+            initSample();
             //---------------For toggle in views--------------------------------
             $scope.isContentShow = false;
+            $scope.index = 1;
+            $scope.assigningIndex = function(INDEX) {
+                $scope.index = Number(INDEX);
+                console.log(INDEX);
+                console.log($scope.index + " This called first");
+            }
             $scope.isContentShowToggle = function() {
                 $scope.isContentShow = !$scope.isContentShow;
+                console.log("This called later on");
             };
             //------------------For content in column 2--------------------------------
             this.Information = [{
                     heading: "This is heading",
                     MyButtonNames: ['call', 'email', 'group_add'],
-                    content: "The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
+                    content: "This is 1. The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
                 },
                 {
                     heading: "This is heading",
                     MyButtonNames: ['arrow_back', 'delete', 'group_add'],
-                    content: "The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
+                    content: "This is 2nd. The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
                 },
                 {
                     heading: "This is heading",
                     MyButtonNames: ['call', 'first_page', 'group_add'],
-                    content: "The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
+                    content: "This is 3rd. The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
                 },
                 {
                     heading: "This is heading",
                     MyButtonNames: ['search', 'loading', 'group_add'],
-                    content: "The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
+                    content: "This is 4th. The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
                 }
             ];
             //------------------For Notebook sidebar-----------------------------------
