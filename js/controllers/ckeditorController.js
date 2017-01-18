@@ -7,7 +7,7 @@
                 { heading: 'Evening', text: "", imageSRC: 'img/a3.jpg' }
             ];
 
-            initSample();
+            // initSample();
             //---------------For toggle in views--------------------------------
             $scope.isContentShow = false;
             $scope.index = 1;
@@ -22,22 +22,22 @@
             };
             //------------------For content in column 2--------------------------------
             this.Information = [{
-                    heading: "This is heading",
+                    heading: "This is 1st heading",
                     MyButtonNames: ['call', 'email', 'group_add'],
                     content: "This is 1. The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
                 },
                 {
-                    heading: "This is heading",
+                    heading: "This is 2nd heading",
                     MyButtonNames: ['arrow_back', 'delete', 'group_add'],
                     content: "This is 2nd. The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
                 },
                 {
-                    heading: "This is heading",
+                    heading: "This is 3rd heading",
                     MyButtonNames: ['call', 'first_page', 'group_add'],
                     content: "This is 3rd. The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
                 },
                 {
-                    heading: "This is heading",
+                    heading: "This is 4th heading",
                     MyButtonNames: ['search', 'loading', 'group_add'],
                     content: "This is 4th. The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears."
                 }

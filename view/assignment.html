@@ -1,6 +1,7 @@
 <md-content>
-    <md-card>
-        <div layout="row" style="height: 776px;">
+
+    <div layout="row" style="height: 776px;">
+        <md-card>
             <md-sidenav id="col_1" class="md-sidenav-left" style="width: 250px; min-width: 250px; max-width: 250px;" md-component-id="left2" md-is-locked-open="$mdMedia('gt-md')">
                 <md-toolbar style="min-height: 50px;" class="md-hue-3">
                     <h1 class="md-toolbar-tools">Notebook</h1>
@@ -14,61 +15,41 @@
                     </md-button>
                 </md-content>
             </md-sidenav>
-            <!-- column 2-->
-            <md-content layout="row">
-                <div id="col_2" flex="grow" layout="column">
-                    <md-toolbar style="min-height: 50px;" class="md-hue-3" layout="row">
-                        <div class="md-toolbar-tools" style="padding: 4px 16px 0px 16px;">
-                            <md-button class="md-icon-button" style="color: gray;" ng-hide="!isContentShow" ng-click="isContentShowToggle()"><i class="material-icons">arrow_back</i></md-button>
-                            <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
-                                <span style="color:white;">Notebook</span>
-                            </md-button>
-                            <md-button class="md-icon-button" style="color: gray;"><i class="material-icons">note_add</i></md-button>
-                            <span flex></span>
-                            <md-button class="md-icon-button" style="color: gray;"><i class="material-icons">edit</i></md-button>
-                            <md-button class="md-icon-button md-warn"><i class="material-icons">delete</i></md-button>
-                        </div>
-                    </md-toolbar>
-                    <md-content>
-                        <!-- CK-editor -->
-                        <div ng-hide="!isContentShow" style="overflow: hidden;">
-                            <div class="col-xs-12" style="height: 600px;">
-                                <div flex layout="column">
-                                    <div id="main" flex="grow" class="col-xs-12">
-                                        <!--  <main>
-                                            <div class="adjoined-bottom">
-                                                <div class="grid-container" style="">
-                                                    <div style="padding: 0px 0px 0px 0px;" class="grid-width-100">
-                                                        <div id="editor" style="width: 800px;">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </main>
-                                        -->
-                                        {{index}}
-                                        <div id="editor" style="width: 800px;">
-                                            {{ck.Information[index].content}}
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <md-toolbar style="min-height: 10px; background-color: white;">
-                                            <div class="md-toolbar-tools">
-                                                <md-button class="md-icon-button" style="color: gray;"><i class="material-icons">attach_file</i></md-button>
-                                                <md-button class="md-icon-button" style="color: gray;"><i class="material-icons">share</i></md-button>
-                                                <md-button class="md-icon-button" style="color: gray;"><i class="material-icons">delete</i></md-button>
-                                                <span flex></span>
-                                                <md-button class="md-primary" style="color: #3f51b5;">SAVE</md-button>
-                                            </div>
-                                        </md-toolbar>
-                                    </div>
+        </md-card>
+        <!-- column 2-->
+        <md-content layout="row">
+            <div id="col_2" flex="grow" layout="column">
+                <md-content>
+                    <!-- shown on click -->
+                    <div ng-hide="!isContentShow" style="overflow: hidden;">
+                        <md-card>
+                            <md-toolbar style="min-height: 50px;" class="md-hue-3" layout="row">
+                                <div class="md-toolbar-tools" style="padding: 4px 16px 0px 16px;">
+                                    <md-button class="md-icon-button" style="color: gray;" ng-hide="!isContentShow" ng-click="isContentShowToggle()"><i class="material-icons">arrow_back</i></md-button>
+                                    <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
+                                        <span style="color:white;">Notebook</span>
+                                    </md-button>
+                                    <md-button class="md-icon-button" style="color: gray;"><i class="material-icons">note_add</i></md-button>
+                                    <span flex></span>
+                                    <md-button class="md-icon-button" style="color: gray;"><i class="material-icons">edit</i></md-button>
+                                    <md-button class="md-icon-button md-warn"><i class="material-icons">delete</i></md-button>
                                 </div>
+                            </md-toolbar>
+                            <div flex="grow">
+                                <h1 style="text-align: center;">{{ck.Information[index].heading}}</h1>
+                                <p style="text-align: center">{{ck.Information[index].content}}</p>
                             </div>
-                        </div>
-                        <!-- CK-editor ends -->
-                        <div ng-hide="isContentShow" layout="row" layout-align="center start" style="justify-content: space-around;" layout-fill layout-wrap>
-                            <md-card flex-xs="100" flex-sm="50" flex-md="33" flex-lg="25" flex-gt-lg="20" ng-repeat="info in ck.Information" layout="column" layout-align="center center" layout-margin layout-padding class="md-whiteframe-2dp">
+                        </md-card>
+                    </div>
+
+                    <div ng-hide="isContentShow" layout="column" layout-align="center center" layout-wrap>
+
+                        <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
+                            <md-button class="md-raised md-primary">Notebook</md-button>
+                        </md-button>
+
+                        <div ng-hide="isContentShow" layout="row" layout-align="center start" layout-wrap>
+                            <md-card style="margin: 20px 20px 30px 20px;" flex-xs="100" flex-sm="50" flex-md="33" flex-lg="25" flex-gt-lg="20" ng-repeat="info in ck.Information" layout="column" layout-align="center center" layout-margin layout-padding class="md-whiteframe-2dp">
                                 <md-card-title>
                                     <md-card-title-text ng-click="null">
                                         <div class="md-headline" ng-click="assigningIndex($index);isContentShowToggle()">{{info.heading}}</div>
@@ -89,11 +70,12 @@
                                 </div>
                             </md-card>
                         </div>
-                    </md-content>
-                </div>
-            </md-content>
-        </div>
-    </md-card>
+                    </div>
+                </md-content>
+            </div>
+        </md-content>
+    </div>
+
 </md-content>
 
 <!--
