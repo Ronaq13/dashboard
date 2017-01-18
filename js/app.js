@@ -54,13 +54,14 @@
                     url: '/assignment',
                     templateUrl: './view/assignment.html',
                     controller: 'ckeditorController',
-                    controllerAs: 'ck',
-
+                    controllerAs: 'ck'
 
                 })
                 .state('backup', {
                     url: '/backup',
-                    templateUrl: './view/backup.html'
+                    templateUrl: './view/backup.html',
+                    controller: 'teamLeaderBoardController',
+                    controllerAs: 'tlbCtrl'
                 })
                 .state('bookmark', {
                     url: '/bookmark',

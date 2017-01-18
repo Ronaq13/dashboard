@@ -1,2 +1,46 @@
-<h1>Backup</h1>
+<!--<h1>Backup</h1>
 <p>Backup</p>
+-->
+<div layout-padding layout-fill>
+    <div class="inset" hide-sm></div>
+    <div layout="row" layout-align="center start" layout-fill layout-wrap>
+        <md-card style="padding:0px 0px 0px 0px;" flex-xs="100" flex-sm="50" flex-md="33" flex-lg="25" flex-gt-lg="20" ng-repeat="contact in tlbCtrl.contacts| startsWithLetter :ct.activeLetter" layout="column" layout-align="center center" layout-margin layout-padding
+            class="md-whiteframe-2dp">
+            <div style="padding: 0px 0px 0px 0px;" layout="row" layout-fill layout-align="start center">
+                <img style="width: 50px;height: 50px; border-radius: 50%;margin-top: 10px;margin-left: 10px;" ng-src="{{contact.img}}" />
+                <img style="width: 50px;height: 50px; border-radius: 50%;margin-top: 10px;margin-left: 5px;" ng-src="{{contact.img}}" />
+                <img style="width: 50px;height: 50px; border-radius: 50%;margin-top: 10px;margin-left: 5px;" ng-src="{{contact.img}}" />
+            </div>
+            <md-card-title class="sanitize" layout="row" layout-align="start center" layout-fill>
+                <md-card-title-text>
+                    <div class="contact-name">{{contact.name}}</div>
+                    <div class="contact-title">{{contact.title}}</div>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content layout-fill layout="row" layout-align="start center">
+                <address class="contact-address">
+                    <strong>{{contact.company}}</strong>
+                    <br> {{contact.addressOne}}
+                    <br> {{contact.addressTwo}}
+                    <br>
+                    <abbr title="Phone">P:</abbr>
+                    {{contact.phone}}
+                </address>
+            </md-card-content>
+            <md-divider class="action"></md-divider>
+            <md-card-actions class="contact-action" layout-fill>
+                <md-card-icon-actions layout="row" layout-align="center center">
+                    <md-button class="button-action md-icon-button">
+                        <md-icon class="md">call</md-icon>
+                    </md-button>
+                    <md-button class="button-action md-icon-button">
+                        <md-icon class="md">email</md-icon>
+                    </md-button>
+                    <md-button class="button-action md-icon-button">
+                        <md-icon class="md">group_add</md-icon>
+                    </md-button>
+                </md-card-icon-actions>
+            </md-card-actions>
+        </md-card>
+    </div>
+</div>
