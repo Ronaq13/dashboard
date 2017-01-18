@@ -2,124 +2,137 @@
     angular.module('socialApp')
         .controller('teamLeaderBoardController', function() {
 
-            this.contacts = [{
-                    img: './img/a1.jpg',
-                    name: 'Joe Smith',
+            this.Leaders = [{
+                    img1: './img/a1.jpg',
+                    img2: './img/a2.jpg',
+                    img3: './img/a3.jpg',
+
                     title: 'Graphics Designer',
-                    company: 'Twitter, Inc.',
-                    addressOne: '795 Folsom Ave, Suite 600',
-                    addressTwo: 'San Francisco, CA 94107',
-                    phone: '(123) 456-7890'
+
+                    teamNumber: '01',
+                    teamTitle: 'Design Team',
+                    progressBarValue: '60',
+                    info: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has. '
 
                 },
                 {
-                    img: './img/a2.jpg',
-                    name: 'Alex Jonathan',
+                    img1: './img/a2.jpg',
+                    img2: './img/a3.jpg',
+                    img3: './img/a4.jpg',
                     title: 'CEO',
-                    company: 'Twitter, Inc.',
-                    addressOne: '795 Folsom Ave, Suite 600',
-                    addressTwo: 'San Francisco, CA 94107',
-                    phone: '(123) 456-7890'
+                    teamNumber: '01',
+                    teamTitle: 'Marketing Team',
+                    progressBarValue: '40',
+                    info: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has. '
 
                 },
                 {
-                    img: './img/a3.jpg',
-                    name: 'Monica Smith',
+                    img1: './img/a3.jpg',
+                    img2: './img/a4.jpg',
+                    img3: './img/a5.jpg',
                     title: 'Marketing Manager',
-                    company: 'Twitter, Inc.',
-                    addressOne: '795 Folsom Ave, Suite 600',
-                    addressTwo: 'San Francisco, CA 94107',
-                    phone: '(123) 456-7890'
+                    teamNumber: '01',
+                    teamTitle: 'Developers',
+                    progressBarValue: '90',
+                    info: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has. '
 
                 },
                 {
-                    img: './img/a4.jpg',
-                    name: 'Michael Zimber',
-                    title: 'Sales Manager',
-                    company: 'Twitter, Inc.',
-                    addressOne: '795 Folsom Ave, Suite 600',
-                    addressTwo: 'San Francisco, CA 94107',
-                    phone: '(123) 456-7890'
+                    img1: './img/a3.jpg',
+                    img2: './img/a4.jpg',
+                    img3: './img/a5.jpg',
+                    title: 'Marketing Manager',
+                    teamNumber: '01',
+                    teamTitle: 'Developers',
+                    progressBarValue: '90',
+                    info: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has. '
+                },
+                {
+                    img1: './img/a4.jpg',
+                    img2: './img/a5.jpg',
+                    img3: './img/a6.jpg',
+                    title: 'Marketing Manager',
+                    teamNumber: '01',
+                    teamTitle: 'Developers',
+                    progressBarValue: '69',
+                    info: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has. '
 
                 },
                 {
-                    img: './img/a5.jpg',
-                    name: 'Sandra Smith',
-                    title: 'Graphics Designer',
-                    company: 'Twitter, Inc.',
-                    addressOne: '795 Folsom Ave, Suite 600',
-                    addressTwo: 'San Francisco, CA 94107',
-                    phone: '(123) 456-7890'
+                    img1: './img/a5.jpg',
+                    img2: './img/a6.jpg',
+                    img3: './img/a7.jpg',
+                    title: 'Marketing Manager',
+                    teamNumber: '01',
+                    teamTitle: 'Developers',
+                    progressBarValue: '32',
+                    info: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has. '
 
                 },
                 {
-                    img: './img/a6.jpg',
-                    name: 'Janet Carton',
-                    title: 'CFO',
-                    company: 'Twitter, Inc.',
-                    addressOne: '795 Folsom Ave, Suite 600',
-                    addressTwo: 'San Francisco, CA 94107',
-                    phone: '(123) 456-7890'
+                    img1: './img/a1.jpg',
+                    img2: './img/a4.jpg',
+                    img3: './img/a8.jpg',
+                    title: 'Marketing Manager',
+                    teamNumber: '01',
+                    teamTitle: 'Developers',
+                    progressBarValue: '67',
+                    info: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has. '
 
                 },
                 {
-                    img: './img/a7.jpg',
-                    name: 'Alex Jonathan',
-                    title: 'CEO',
-                    company: 'Twitter, Inc.',
-                    addressOne: '795 Folsom Ave, Suite 600',
-                    addressTwo: 'San Francisco, CA 94107',
-                    phone: '(123) 456-7890'
+                    img1: './img/a3.jpg',
+                    img2: './img/a4.jpg',
+                    img3: './img/a5.jpg',
+                    title: 'Marketing Manager',
+                    teamNumber: '01',
+                    teamTitle: 'Developers',
+                    progressBarValue: '90',
+                    info: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has. '
 
                 },
                 {
-                    img: './img/a8.jpg',
-                    name: 'John Smith',
-                    title: 'Graphics Designer',
-                    company: 'Twitter, Inc.',
-                    addressOne: '795 Folsom Ave, Suite 600',
-                    addressTwo: 'San Francisco, CA 94107',
-                    phone: '(123) 456-7890'
+                    img1: './img/a3.jpg',
+                    img2: './img/a4.jpg',
+                    img3: './img/a5.jpg',
+                    title: 'Marketing Manager',
+                    teamNumber: '01',
+                    teamTitle: 'Developers',
+                    progressBarValue: '90',
+                    info: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has. '
 
                 },
                 {
-                    img: './img/a1.jpg',
-                    name: 'John Smith',
-                    title: 'Graphics Designer',
-                    company: 'Twitter, Inc.',
-                    addressOne: '795 Folsom Ave, Suite 600',
-                    addressTwo: 'San Francisco, CA 94107',
-                    phone: '(123) 456-7890'
+                    img1: './img/a3.jpg',
+                    img2: './img/a4.jpg',
+                    img3: './img/a5.jpg',
+                    title: 'Marketing Manager',
+                    teamNumber: '01',
+                    teamTitle: 'Developers',
+                    progressBarValue: '90',
+                    info: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has. '
 
                 },
                 {
-                    img: './img/a2.jpg',
-                    name: 'John Smith',
-                    title: 'Graphics Designer',
-                    company: 'Twitter, Inc.',
-                    addressOne: '795 Folsom Ave, Suite 600',
-                    addressTwo: 'San Francisco, CA 94107',
-                    phone: '(123) 456-7890'
+                    img1: './img/a3.jpg',
+                    img2: './img/a4.jpg',
+                    img3: './img/a5.jpg',
+                    title: 'Marketing Manager',
+                    teamNumber: '01',
+                    teamTitle: 'Developers',
+                    progressBarValue: '90',
+                    info: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has. '
 
                 },
                 {
-                    img: './img/a3.jpg',
-                    name: 'Alex Jonathan',
-                    title: 'CEO',
-                    company: 'Twitter, Inc.',
-                    addressOne: '795 Folsom Ave, Suite 600',
-                    addressTwo: 'San Francisco, CA 94107',
-                    phone: '(123) 456-7890'
-
-                },
-                {
-                    img: './img/a4.jpg',
-                    name: 'Monica Smith',
-                    title: 'Graphics Designer',
-                    company: 'Twitter, Inc.',
-                    addressOne: '795 Folsom Ave, Suite 600',
-                    addressTwo: 'San Francisco, CA 94107',
-                    phone: '(123) 456-7890'
+                    img1: './img/a3.jpg',
+                    img2: './img/a4.jpg',
+                    img3: './img/a5.jpg',
+                    title: 'Marketing Manager',
+                    teamNumber: '01',
+                    teamTitle: 'Developers',
+                    progressBarValue: '90',
+                    info: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has. '
 
                 }
             ];

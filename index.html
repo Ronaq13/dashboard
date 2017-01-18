@@ -15,8 +15,6 @@
     <!-- CK editor -->
     <link href="ckeditor/samples/css/samples.css" rel="stylesheet">
     <link href="ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css" rel="stylesheet">
-    <script src="ckeditor/ckeditor.js"></script>
-    <script src="ckeditor/samples/js/sample.js"></script>
     <!-- ng-joyride 
     <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <!--  <link href="bower_components/ng-joyride/ng-joyride.css" rel="stylesheet">  -->
@@ -220,7 +218,8 @@
     <!--Angular UI Tour-->
     <script src="bower_components/angular-ui-tour/dist/angular-ui-tour.js"></script>
     <!-- CK-editor -->
-
+    <script src="ckeditor/ckeditor.js"></script>
+    <script src="ckeditor/samples/js/sample.js"></script>
 
     <!-- treeview -->
     <script type="text/javascript" src="js/angular.treeview.js"></script>
@@ -236,6 +235,8 @@
     <script src="js/controllers/ContactsController2.js"></script>
     <script src="js/controllers/ckeditorController.js"></script>
     <script src="js/controllers/teamLeaderBoardController.js"></script>
+
+
 
     <!--directives -->
     <script src="js/directives/userAvatar.js"></script>
@@ -336,7 +337,14 @@
     </script>
     <script>
         $(document).ready(function() {
-            $("#0card").replaceWith("hello");
+            $('#leadersCard1').hover(
+                function() {
+                    $(this).addClass('md-whiteframe-10dp')
+                },
+                function() {
+                    $(this).removeClass('md-whiteframe-2dp')
+                }
+            )
         });
     </script>
 </body>
