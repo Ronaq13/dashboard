@@ -10,16 +10,32 @@
             // initSample();
             //---------------For toggle in views--------------------------------
             $scope.isContentShow = false;
-            $scope.index = 1;
+            $scope.isCkeditorShow = false;
+            $scope.index = -1;
             $scope.assigningIndex = function(INDEX) {
                 $scope.index = Number(INDEX);
                 console.log(INDEX);
                 console.log($scope.index + " This called first");
+                initSample();
+
             }
             $scope.isContentShowToggle = function() {
                 $scope.isContentShow = !$scope.isContentShow;
                 console.log("This called later on");
             };
+            $scope.showCkeditor = function() {
+                $scope.isCkeditorShow = !$scope.isCkeditorShow;
+            };
+
+            function makingCkeditor() {
+                var instance = CKEDITOR.instances['editor'];
+                if (instance) {
+                    CKEDITOR.remove(instance);
+                }
+                // CKEDITOR.replace('editor');
+            }
+            $scope.makingCkeditor = makingCkeditor;
+
             //------------------For content in column 2--------------------------------
             this.Information = [{
                     heading: "This is 1st heading",

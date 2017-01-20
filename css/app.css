@@ -268,14 +268,6 @@
         border-left: 7px solid blue;
         background-color: #a9acad;
     }
-    
-    #col_1 {
-        border-right: 2px solid darkgray;
-    }
-    
-    #col_2 {
-        border-right: 2px solid darkgray;
-    }
     /*---------For treeview---------------------------------*/
     
     md-sidenav>md-content>div[data-angular-treeview] {
@@ -332,8 +324,4 @@
     md-sidenav>md-content>div[data-tree-model] li .selected {
         font-weight: bold;
         padding: 1px 5px;
-    }
-    
-    #0card>p {
-        background-color: blue;
     }

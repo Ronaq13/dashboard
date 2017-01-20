@@ -209,6 +209,7 @@
     <!-- Angular-ui-tour -->
     <!--dependencies:js-->
     <script src="bower_components/jquery/jquery.js"></script>
+
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/ngSmoothScroll/lib/angular-smooth-scroll.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -220,6 +221,7 @@
     <!-- CK-editor -->
     <script src="ckeditor/ckeditor.js"></script>
     <script src="ckeditor/samples/js/sample.js"></script>
+    <script src="bower_components/angular-ckeditor/angular-ckeditor.js"></script>
 
     <!-- treeview -->
     <script type="text/javascript" src="js/angular.treeview.js"></script>
@@ -344,9 +346,14 @@
                 function() {
                     $(this).removeClass('md-whiteframe-2dp')
                 }
-            )
+            );
+
+            function testingAlert() {
+                alert("hello");
+            }
         });
     </script>
+
 </body>
 
 </html>
