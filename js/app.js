@@ -65,8 +65,31 @@
                 })
                 .state('bookmark', {
                     url: '/bookmark',
-                    templateUrl: './view/bookmark.html'
+                    templateUrl: './view/bookmark.html',
+                    controller: 'bookmarkController'
                 })
+                //-------------------Nested states under bookmark-------------------------------
+                .state('bookmark.emailVerification', {
+                    url: '/emailVerification',
+                    templateUrl: './view/bookmark.emailVerification.html'
+                })
+                .state('bookmark.passwordReset', {
+                    url: '/passwordReset',
+                    templateUrl: './view/bookmark.passwordReset.html'
+                })
+                .state('bookmark.emailChange', {
+                    url: '/emailChange',
+                    templateUrl: './view/bookmark.emailChange.html'
+                })
+                .state('bookmark.contacts', {
+                    url: '/contacts',
+                    templateUrl: './view/bookmark.contacts.html'
+                })
+                .state('bookmark.phone', {
+                    url: '/phone',
+                    templateUrl: './view/bookmark.phone.html'
+                })
+                //--------------------------------------------------------------------------------
                 .state('description', {
                     url: '/description',
                     templateUrl: './view/description.html'

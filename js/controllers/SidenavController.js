@@ -9,7 +9,7 @@
                 { name: 'Contacts', icon: 'contacts', url: '#/contacts', id: 'item2' },
                 { name: 'Assignment', icon: 'assignment', url: '#/assignment', id: 'item3' },
                 { name: 'Backup', icon: 'backup', url: '#/backup', id: 'item4' },
-                { name: 'Bookmark', icon: 'bookmark', url: '#/bookmark', id: 'item5' },
+                { name: 'Bookmark', icon: 'bookmark', url: '#/bookmark/emailVerification', id: 'item5' },
                 { name: 'DNS', icon: 'dns', url: '#/dns', id: 'item6' },
                 { name: 'Description', icon: 'description', url: '#/description', id: 'item7' },
                 { name: 'Extension', icon: 'extension', url: '#/extension', id: 'item8' },

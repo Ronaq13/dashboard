@@ -23,6 +23,10 @@
                     <!-- CK-editor -->
                     <div ng-show="isCkeditorShow" style="height: 470px; overflow: hidden;">
                         <md-button class="md-icon-button" style="color: gray;" ng-click="showCkeditor();makingCkeditor()"><i class="material-icons">arrow_back</i></md-button>
+                        <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
+                            <md-button class="md-raised md-primary">Notebook</md-button>
+                        </md-button>
+
                         <div layout-fill style="height: 600px;">
                             <div flex layout="column">
 

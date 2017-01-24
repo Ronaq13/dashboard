@@ -325,3 +325,8 @@
         font-weight: bold;
         padding: 1px 5px;
     }
+    
+    .selectedItem {
+        background-color: #039BE5;
+        color: white;
+    }
