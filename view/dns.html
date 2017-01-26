@@ -1,2 +1,74 @@
-<h1>DNS</h1>
-<p>DNS</p>
+<md-content>
+    <div style="margin: 50px 100px 100px 100px;">
+        <md-list style="padding: 0px;" layout="column" ng-repeat="day in days">
+            <md-list-item style="height: 100px;">
+                <div flex layout="column" layout-align="start center" layout-fill>
+                    <md-button style="margin: 0px;background-color: {{day.background_color}}; width: 150px;" aria-label="Today" class="md-raised md-primary"> {{day.day}} </md-button>
+                    <div class="vertical-divider"></div>
+                </div>
+            </md-list-item>
+            <md-list-item ng-if="day.day == item.when_2" layout="row" layout-align="center center" ng-repeat="item in todos">
+                <!-- Left side -->
+                <div ng-if="$index%2!=0" flex layout="row" layout-align="center center" style="margin: 0px 0px 30px 0px;">
+                    <md-card style="cursor:pointer;">
+                        <md-card-content style="padding:0px 16px 0px 16px; background-color: #f5f5f5;">
+                            <p class="md-headline" style="color: {{item.icon_colour}}; opacity: 0.7;font-size: 20;font-family: 'Roboto', sans-serif;">{{item.what}}</p>
+                            <p style="opacity: 0.7;font-size: 15;font-family: 'Roboto', sans-serif;">{{item.notes}}</p>
+                            <div layout="row" layout-sm="column" layout-xs="column" layout-align="space-between start">
+                                <md-card-actions layout="row" layout-align="space-between start " style="opacity: 0.7;font-size: 15;font-family: 'Roboto';">{{item.when}}</md-card-actions>
+                                <md-card-actions layout="row" layout-align="left " style="opacity: 0.7;font-size: 15;font-family: 'Roboto';">{{item.when_2}}</md-card-actions>
+                                <md-card-actions layout="row" layout-sm="column" layout-xs="column" layout-align="space-between start" style="margin: 0px;">
+                                    <md-button class="{{item.btn_style}} md-icon-button" style="background-color: {{item.colour}};border-radius: 50%; margin:8px 8px 8px 0px; padding:0px;">
+                                        <md-icon><i class="material-icons">{{item.btn_content}}</i></md-icon>
+                                    </md-button>
+                                    <md-button class="md-icon-button" aria-label="icon" style="background-color: white; margin: 8px 8px 8px 0px; padding: 0px;">
+                                        <md-icon><i class="material-icons">mode_edit</i> </md-icon>
+                                    </md-button>
+                                </md-card-actions>
+                            </div>
+
+                        </md-card-content>
+                    </md-card>
+                </div>
+                <div flex ng-if="$index%2==0" style="color: #98797D; height: 100%; padding-top: 5px;" class="md-caption" layout="row" layout-align="end start">
+                    <div ng-if="day.day!='Yesterday'">
+                        3 min ago
+                    </div>
+                </div>
+                <!-- middle -->
+                <div layout="column" layout-align="start center" style="height: 100%;">
+                    <md-button class="md-icon-button" aria-label="icon" style="margin: 0px 8px 0px 8px; box-shadow:0px #f5f5f5;border-radius:50%;background-color: {{item.icon_colour}}">
+                        <md-icon><i class="material-icons" layout="row">{{item.icon_select}}</i> </md-icon>
+                    </md-button>
+                    <div class="vertical-divider"></div>
+                </div>
+                <!-- right side -->
+                <div flex ng-if="$index%2!=0" style="color: #98797D;height: 100%; padding-top: 5px;" class="md-caption" layout="row" layout-align="start start">
+                    <div ng-if="day.day!='Yesterday'">
+                        1h ago
+                    </div>
+                </div>
+                <div ng-if="$index%2 == 0" flex layout="row" layout-align="center center" style="margin: 0px 0px 30px 0px;">
+                    <md-card style="cursor:pointer;" layout-sm="column">
+                        <md-card-content style="padding: 0px 16px 0px 16px;background-color: #f5f5f5;">
+                            <p class="md-headline" style="color: {{item.icon_colour}};opacity: 0.7;font-size: 20;font-family: 'Roboto', sans-serif; ">{{item.what}}</p>
+                            <p style="opacity: 0.7;font-size: 15;font-family: 'Roboto', sans-serif; ">{{item.notes}}</p>
+                            <div layout="row" layout-sm="column" layout-xs="column" layout-align="space-between start">
+                                <md-card-actions layout="row" layout-align="space-between start " style="opacity: 0.7;font-size: 15;font-family: 'Roboto';">{{item.when}}</md-card-actions>
+                                <md-card-actions layout="row" layout-align="left " style="opacity: 0.7;font-size: 15;font-family: 'Roboto';">{{item.when_2}}</md-card-actions>
+                                <md-card-actions layout="row" layout-sm="column" layout-xs="column" layout-align="space-between start" style="margin: 0px;">
+                                    <md-button class="{{item.btn_style}} md-icon-button" style="background-color: {{item.colour}};border-radius: 50%; margin:8px 8px 8px 0px; padding:0px;">
+                                        <md-icon><i class="material-icons">{{item.btn_content}}</i></md-icon>
+                                    </md-button>
+                                    <md-button class="md-icon-button" aria-label="icon" style="background-color: white;border-radius: 50%; margin: 8px 8px 8px 0px; padding: 0px;">
+                                        <md-icon><i class="material-icons" layout="row">mode_edit</i> </md-icon>
+                                    </md-button>
+                                </md-card-actions>
+                            </div>
+                        </md-card-content>
+                    </md-card>
+                </div>
+            </md-list-item>
+        </md-list>
+    </div>
+</md-content>

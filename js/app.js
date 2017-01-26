@@ -100,7 +100,8 @@
                 })
                 .state('dns', {
                     url: '/dns',
-                    templateUrl: './view/dns.html'
+                    templateUrl: './view/dns.html',
+                    controller: 'dnsController'
                 })
                 .state('extension', {
                     url: '/extension',
