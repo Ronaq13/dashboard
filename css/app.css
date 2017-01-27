@@ -268,6 +268,14 @@
         border-left: 7px solid blue;
         background-color: #a9acad;
     }
+    
+    #col_1 {
+        border-right: 2px solid darkgray;
+    }
+    
+    #col_2 {
+        border-right: 2px solid darkgray;
+    }
     /*---------For treeview---------------------------------*/
     
     md-sidenav>md-content>div[data-angular-treeview] {
@@ -326,6 +334,10 @@
         padding: 1px 5px;
     }
     
+    #0card>p {
+        background-color: blue;
+    }
+    
     .selectedItem {
         background-color: #039BE5;
         color: white;
@@ -337,31 +349,4 @@
         border-right-style: solid;
         height: 100%;
         border-color: #5f6b68;
-    }
-    
-    body {
-        overflow-x: hidden;
-    }
-    
-    md-sidenav,
-    md-backdrop {
-        position: fixed !important;
-    }
-    
-    md-switch ._md-thumb {
-        background-color: #FFD740;
-    }
-    
-    md-tabs md-ink-bar {
-        color: #FFD740;
-        background-color: #FFD740;
-    }
-    
-    md-tabs .md-tab:active .md-ripple-container {
-        background-color: rgba(56, 32, 73, .1);
-    }
-    
-    md-tabs .md-tab .md-ripple-container .md-ripple {
-        background: #FFD740;
-        background-color: #FFD740;
     }
