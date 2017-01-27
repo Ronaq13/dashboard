@@ -1,6 +1,3 @@
-/**
- * Created by mradul on 26/11/16.
- */
 (function() {
     angular.module('socialApp')
         .controller('ToolbarController', ['$scope', '$mdSidenav', function($scope, $mdSidenav) {

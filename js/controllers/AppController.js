@@ -18,8 +18,5 @@
             $scope.letsStart = function(tour) {
                 tour.start();
             };
-            //--------------------------------------
-
-
         });
 })();

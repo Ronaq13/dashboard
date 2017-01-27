@@ -1,6 +1,3 @@
-/**
- * Created by mradul on 28/11/16.
- */
 (function() {
     angular.module('socialApp')
         .controller('contacts2Controller', function() {
