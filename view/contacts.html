@@ -13,7 +13,7 @@
         </md-card>
     </div>
     <div class="inset" hide-sm></div>
-    <div layout="row" layout-align="center start" layout-fill layout-wrap style="margin-bottom: 150px;">
+    <div layout="row" layout-align="center start" layout-fill layout-wrap>
         <md-card flex-xs="100" flex-sm="50" flex-md="33" flex-lg="25" flex-gt-lg="20" ng-repeat="contact in ct.contacts| startsWithLetter :ct.activeLetter" layout="column" layout-align="center center" layout-margin layout-padding class="md-whiteframe-2dp">
             <img class="contact" ng-src="{{contact.img}}" />
             <md-card-title class="sanitize">

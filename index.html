@@ -1,5 +1,5 @@
 <!DOCTYPE>
-<html lang="en" ng-app="socialApp">
+<html lang="en" ng-app="socialApp" style="margin-bottom: 50px;">
 
 <head>
     <meta charset="utf-8" />
@@ -23,7 +23,7 @@
     <title>The Social Network</title>
 </head>
 
-<body ui-tour ui-tour-on-show="welcome()" style="overflow: hidden;" layout="column" ng-controller="AppController as AppCtrl">
+<body ui-tour ui-tour-on-show="welcome()" style="overflow: hidden; margin-bottom: 50px !important;" layout="column" ng-controller="AppController as AppCtrl">
     <!--Toolbar-->
     <div ng-controller="ToolbarController as tbc">
         <!--Main Toolbar -->
@@ -151,7 +151,7 @@
                 </md-list>
             </md-sidenav>
 
-            <div ng-class="{'marginToView':!showButton}" flex ui-view style="display: flex; justify-content: center; align-items: center;"></div>
+            <div ng-class="{'marginToView':!showButton}" flex ui-view style="display: flex; justify-content: center; align-items: center; margin-bottom: 50px;"></div>
 
             <!--Right Sidenav-->
             <md-sidenav class="md-sidenav-right" md-white-frame="10" md-component-id="right">
@@ -160,7 +160,7 @@
                         <md-tab-label style="width: 100%;"><i class="material-icons">mail</i>
                         </md-tab-label>
                         <md-tab-body>
-                            <md-list style="padding: 0px;" flex>
+                            <md-list style="padding: 0px;margin-bottom: 100px;" flex>
                                 <md-list-item style="border-bottom: 1px solid #E0E0E0;" class="md-3-line" ng-repeat="message in messages" ng-click="null">
                                     <img style="margin: 0px 20px 0px 20px;" ng-src="{{message.face}}?{{$index}}" class="md-avatar" alt="{{message.name}}" />
                                     <div style="margin: 0px 20px 0px 0px;" class="md-list-item-text" layout="column">
@@ -174,8 +174,8 @@
                     </md-tab>
                     <md-tab id="tab2">
                         <md-tab-label flex><i class="material-icons">notifications_none</i></md-tab-label>
-                        <md-tab-body>
-                            <md-list style="padding: 0px;" flex ng-repeat="title in notification_title">
+                        <md-tab-body style="margin-bottom: 100px;">
+                            <md-list style="padding: 0px; margin-bottom: 100px;" flex ng-repeat="title in notification_title">
                                 <md-toolbar layout="row" style="background-color: #FAFAFA; color: #00BCDB;">
                                     <div class="md-toolbar-tools">
                                         <span>{{title.title}}</span>
@@ -192,7 +192,7 @@
                     <md-tab id="tab3">
                         <md-tab-label flex><i class="material-icons">person</i></md-tab-label>
                         <md-tab-body>
-                            <md-list style="padding: 0px;" flex>
+                            <md-list style="padding: 0px;margin-bottom: 100px;" flex>
                                 <md-toolbar layout="row" style="background-color: #FAFAFA; color: #00BCDB;">
                                     <div class="md-toolbar-tools">
                                         <span>Account Settings</span>
