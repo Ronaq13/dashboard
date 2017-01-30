@@ -17,7 +17,7 @@
                 </md-sidenav>
             </md-card>
             <!-- column 2-->
-            <md-content layout="row">
+            <md-content layout="row" style="margin-bottom: 150px;">
                 <div flex="grow" layout="column">
                     <md-content>
                         <!-- CK-editor -->
@@ -82,12 +82,10 @@
                         </div>
                         <!-- Normal view -->
                         <div ng-hide="isContentShow" layout="column" layout-align="center center" layout-wrap>
-
                             <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
                                 <md-button class="md-raised md-primary">Notebook</md-button>
                             </md-button>
-
-                            <div ng-hide="isContentShow" layout="row" layout-align="center start" layout-wrap>
+                            <div ng-hide="isContentShow" layout="row" layout-align="start start" layout-wrap>
                                 <md-card style="margin: 20px 20px 30px 20px;" flex-xs="100" flex-sm="50" flex-md="33" flex-lg="25" flex-gt-lg="20" ng-repeat="info in ck.Information" layout="column" layout-align="center center" layout-margin layout-padding class="md-whiteframe-2dp">
                                     <md-card-title>
                                         <md-card-title-text ng-click="null">

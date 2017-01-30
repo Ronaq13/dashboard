@@ -7,17 +7,14 @@
             <md-card-content layout="row" layout-align="center center" class="filter-alphabets">
                 <p layout="row" layout-align="center center" layout-wrap>
                     <a ng-click="ct.activateLetter('')" ng-class="{'active-letter': ct.activeLetter == ''}" md-ink-ripple>ALL</a>
-                    <a ng-repeat="alphabet in ct.alphabets" ng-click="ct.activateLetter(alphabet)"
-                                  ng-class="{'active-letter':alphabet==ct.activeLetter}" md-ink-ripple>{{alphabet}}</a>
+                    <a ng-repeat="alphabet in ct.alphabets" ng-click="ct.activateLetter(alphabet)" ng-class="{'active-letter':alphabet==ct.activeLetter}" md-ink-ripple>{{alphabet}}</a>
                 </p>
             </md-card-content>
         </md-card>
     </div>
     <div class="inset" hide-sm></div>
-    <div layout="row" layout-align="center start" layout-fill layout-wrap>
-        <md-card flex-xs="100" flex-sm="50" flex-md="33" flex-lg="25" flex-gt-lg="20"
-        ng-repeat="contact in ct.contacts| startsWithLetter :ct.activeLetter" layout="column" layout-align="center center"
-                 layout-margin layout-padding class="md-whiteframe-2dp">
+    <div layout="row" layout-align="center start" layout-fill layout-wrap style="margin-bottom: 150px;">
+        <md-card flex-xs="100" flex-sm="50" flex-md="33" flex-lg="25" flex-gt-lg="20" ng-repeat="contact in ct.contacts| startsWithLetter :ct.activeLetter" layout="column" layout-align="center center" layout-margin layout-padding class="md-whiteframe-2dp">
             <img class="contact" ng-src="{{contact.img}}" />
             <md-card-title class="sanitize">
                 <md-card-title-text>
