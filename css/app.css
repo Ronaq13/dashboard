@@ -265,8 +265,8 @@
     }
     
     .selectedTab {
-        border-left: 7px solid blue;
-        background-color: #a9acad;
+        border-left: 7px solid #03A9F4;
+        background-color: #DEDEDE;
     }
     
     #col_1 {
@@ -357,4 +357,8 @@
     
     .marginToView {
         margin-left: 95px;
+    }
+    
+    div.md-subheader>div.md-subheader-inner {
+        padding: 0px;
     }

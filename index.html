@@ -29,10 +29,10 @@
         <!--Main Toolbar -->
         <md-toolbar layout="row" ng-hide="tbc.showSearch()" layout-align="center center" md-whiteframe="5">
             <!-- First tour element -->
-            <md-button style="margin-left: 10px;" class="padMarg0 reduceWidth" ng-hide="showButton" aria-label="menu" ng-click="toggleIcons()">
+            <md-button style="margin-left: 10px;" class="padMarg0" ng-hide="showButton" aria-label="menu" ng-click="toggleIcons()">
                 <md-icon md-font-set="md">menu</md-icon>
             </md-button>
-            <md-button style="margin-left: 10px;" class="padMarg0 reduceWidth" ng-show="showButton" aria-label="menu" ng-click="toggleLeft()">
+            <md-button style="margin-left: 10px;" class="padMarg0 makingWidthSmall" ng-show="showButton" aria-label="menu" ng-click="toggleLeft()">
                 <md-icon md-font-set="md">menu</md-icon>
             </md-button>
             <span flex="3" gt-md></span>
@@ -128,7 +128,7 @@
                 <!-- Fourth tour item -->
                 <md-list ng-controller="SidenavController as sc">
                     <!--Item 1 -->
-                    <md-list-item ng-repeat="setting in sc.settings" layout="row" class="left-sidenav" href="{{setting.url}}" layout-align="start start">
+                    <md-list-item ng-repeat="setting in sc.settings" layout="row" class="left-sidenav" href="{{setting.url}}" layout-align="start start" id="{{$index}}">
                         <a class="sidenavLink" md-ink-ripple layout="row" layout-align="start center">
                             <div class="inset">
                                 <md-icon md-font-set="md">{{setting.icon}}</md-icon>
@@ -151,7 +151,7 @@
                 </md-list>
             </md-sidenav>
 
-            <div ng-class="{'marginToView':!showButton}" flex ui-view style="display: flex; justify-content: center; align-items: center;"></div>
+            <div ng-class="{'marginToView':!showButton}" flex ui-view style="display: flex; justify-content: center; align-items: center; overflow: hidden;"></div>
 
             <!--Right Sidenav-->
             <md-sidenav class="md-sidenav-right" md-white-frame="10" md-component-id="right">
