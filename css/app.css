@@ -350,3 +350,11 @@
         height: 100%;
         border-color: #5f6b68;
     }
+    
+    body {
+        overflow-x: hidden;
+    }
+    
+    .marginToView {
+        margin-left: 95px;
+    }

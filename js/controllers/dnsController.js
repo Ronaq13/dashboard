@@ -1,6 +1,21 @@
 (function() {
     angular.module('socialApp')
-        .controller('dnsController', ['$scope', function($scope) {
+        .controller('dnsController', ['$scope', '$mdMedia', function($scope, $mdMedia) {
+
+
+            $scope.$watch(function() {
+                if ($mdMedia('gt-sm')) {
+                    return true;
+                } else {
+                    return false;
+                }
+                console.log($scope.showButton);
+            }, function(response) {
+                $scope.isViewGtMd = response;
+                console.log("Left right view is :" + response);
+            });
+
+
             var imagePath = '../../img/a1.jpeg';
             $scope.days = [{
                 day: 'Today',

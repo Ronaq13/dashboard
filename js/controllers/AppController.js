@@ -1,22 +1,31 @@
 (function() {
     angular.module('socialApp')
-        .controller('AppController', function($scope, $timeout, $mdSidenav, $log) {
-            this.iconsOnly = true;
-
-            this.toggleIcons = function() {
-                this.iconsOnly = !this.iconsOnly;
+        .controller('AppController', ['$scope', '$mdMedia', '$mdSidenav', function($scope, $mdMedia, $mdSidenav) {
+            $scope.toggleIcons = function() {
+                $scope.iconsOnly = !$scope.iconsOnly;
+            };
+            $scope.$watch(function() {
+                if ($mdMedia('sm') || $mdMedia('xs')) {
+                    return true;
+                } else {
+                    return false;
+                }
+                console.log($scope.showButton);
+            }, function(response) {
+                $scope.showButton = response;
+                if (response) {
+                    $scope.iconsOnly = false;
+                } else {
+                    $scope.iconsOnly = true;
+                }
+                console.log("This is status of button :" + response);
+            });
+            $scope.toggleLeft = function() {
+                $mdSidenav('left').toggle();
             };
 
-            this.joyStart = function() {
-                $scope.startJoyRide = true;
-            };
-
-            $scope.name = "";
-            $scope.welcome = function() {
-                $scope.name = "Raounak Sharma";
-            };
             $scope.letsStart = function(tour) {
                 tour.start();
             };
-        });
+        }]);
 })();
